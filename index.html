@@ -53,6 +53,7 @@ a{color:inherit}
 .note{transition:transform .15s}
 .note.sage{--c:var(--sage)} .note.teal{--c:var(--teal)} .note.deep{--c:var(--deep)} .note.pink{--c:var(--pink)}
 .note small{display:block;font-size:.42em;margin-top:.5em;opacity:.8}
+.note.wide{grid-column:1/-1;aspect-ratio:auto;padding:26px 16px}
 .hubcard{text-align:center}
 .hubcard h1{font-size:clamp(2.1rem,5vw,3.4rem);margin-bottom:.45em}
 .hubcard p{font-family:'Patrick Hand',cursive;font-size:clamp(1.15rem,2.2vw,1.45rem);letter-spacing:.06em;line-height:1.55;margin:0 auto 18px;max-width:30ch}
@@ -3170,7 +3171,7 @@ function speakList(arr){if(!('speechSynthesis' in window))return;try{window.spee
 function vHub(){
   return '<main class="scene hub" id="main">'+
    '<div class="hubcard">'+pad('<h1 class="display">Science Resource Hub</h1><p>A collection of helpful resources to reinforce the learning that\u2019s happening in Mrs. Swinea\u2019s Science Lab</p><img src="'+EARTH+'" alt="A globe, a sprouting plant, and a science flask">')+'</div>'+
-   '<div class="notes">'+note('/g/3','Third Grade','sage')+note('/g/4','Fourth Grade','teal')+note('/g/5','Fifth Grade','deep')+note('/science-fair','Science Fair','pink')+'</div></main>'+foot()}
+   '<div class="notes">'+note('/g/3','Third Grade','sage')+note('/g/4','Fourth Grade','teal')+note('/g/5','Fifth Grade','deep')+note('/science-fair','Science Fair','pink')+note('/mesa','MESA Challenges','sage wide','Boss Battle review games')+'</div></main>'+foot()}
 function vGrade(gr){var G=GRADES[gr];
   return crumb('/','Resource Hub')+'<main class="scene" id="main"><div class="lead"><h1 class="display" tabindex="-1">'+esc(G.name)+'</h1><p>'+inl(G.text)+'</p></div>'+
    pad('<div class="notes">'+[1,2,3,4].map(function(n,i){return note('/g/'+gr+'/q/'+n,'Quarter '+QWORD[n],['sage','teal','deep','pink'][i],esc(QUARTERS[gr+'-'+n].n))}).join('')+'</div>')+'</main>'+foot()}
@@ -3211,6 +3212,14 @@ function vHome(gr,qn){var Q=QUARTERS[gr+'-'+qn],base='/g/'+gr+'/q/'+qn;
   return pageHead(base,'Q'+qn+': '+Q.n,'At Home Activities','pink','At-home activities for Quarter '+QWORD[qn],'Short activities that use things you already have. The time and materials are listed for each one.')+secs+'</div>'+foot()}
 function vFair(){return pageHead('/','Resource Hub','Science Fair','pink','Science fair','')+'<div class="paper empty"><p class="display">Coming soon</p><p>Science fair information will be posted here.</p></div></div>'+foot()}
 function vMissing(back){return crumb(back||'/','Back')+'<div class="page" id="main"><div class="paper empty"><p class="display">Page not found</p><p><a class="btn" href="#/">Go to the hub</a></p></div></div>'}
+
+/* MESA boss battle */
+var MESA=[['lander','Planetary Lander','Boss: Crater Crusher','sage'],['wearable','Wearable Technology','Boss: The Overheater','teal'],['storybook','Storybook Theme Park','Boss: The Page Gobbler','deep'],['cleanup','Community Clean-up','Boss: Trash Tornado','pink']];
+function vMesa(){
+  return crumb('/','Resource Hub')+'<main class="scene" id="main"><div class="lead"><span class="tag sage">MD MESA</span><h1 class="display" tabindex="-1">MESA Challenges</h1>'+
+   '<p>Get ready for MESA with a team boss battle! Pick your team’s challenge. Teams take turns answering questions about the challenge rules. Right answers hit the boss, and wrong answers heal it. Work together to win!</p>'+
+   '<p style="margin-top:14px"><a class="btn" href="mesa-boss-battle.html">Open the game</a></p></div>'+
+   pad('<div class="notes">'+MESA.map(function(m){return '<a class="note '+m[3]+'" href="mesa-boss-battle.html#'+m[0]+'">'+star('pin')+'<span>'+m[1]+'<small>'+m[2]+'</small></span></a>'}).join('')+'</div>')+'</main>'+foot()}
 
 /* science fair */
 function fairNotes(){return note('/science-fair/steps','Steps of Science','sage')+note('/science-fair/questions','Testable Questions','teal')+note('/science-fair/variables','Variables','deep')+note('/science-fair/ideas','Project Ideas','pink')+note('/science-fair/board','Display Board','sage')+note('/science-fair/signup','Interest Form','teal')}
@@ -3270,6 +3279,7 @@ function route(){
   try{
     if(!p.length){html=vHub();pg='hub'}
     else if(p[0]==='science-fair'){html=p[1]?vFairSub(p[1]):vFair()}
+    else if(p[0]==='mesa'&&p.length===1){html=vMesa()}
     else if(p[0]==='g'&&/^[345]$/.test(p[1]||'')){gr=p[1];
       if(p.length===2)html=vGrade(gr);
       else if(p[2]==='q'&&/^[1-4]$/.test(p[3]||'')){var qn=+p[3];
