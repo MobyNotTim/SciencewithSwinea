@@ -53,6 +53,15 @@ a{color:inherit}
 .note{transition:transform .15s}
 .note.sage{--c:var(--sage)} .note.teal{--c:var(--teal)} .note.deep{--c:var(--deep)} .note.pink{--c:var(--pink)}
 .note small{display:block;font-size:.42em;margin-top:.5em;opacity:.8}
+.path{display:inline-block;font-family:'Patrick Hand',cursive;font-size:1.05rem;color:#111;border:3px solid #111;border-radius:999px;padding:0 12px;background:var(--pc)}
+.path.college{--pc:#a5dbeb} .path.cc{--pc:#c9deb2} .path.trade{--pc:#ffd8dc} .path.appr{--pc:#f4d746} .path.job{--pc:#ffea9b}
+.careers{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-top:30px}
+.career{background:var(--paper);color:var(--paper-text);border:4px solid #111;border-radius:2px;padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.career h2{font-family:'Patrick Hand',cursive;font-weight:400;font-size:1.65rem;line-height:1.1;margin:0}
+.career p{margin:0;line-height:1.65}
+.career .lbl{font-family:'Patrick Hand',cursive;font-size:1.15rem;color:var(--deep)}
+.pathkey{display:flex;flex-wrap:wrap;gap:10px 18px;margin:12px 0 0;padding:0;list-style:none}
+.pathkey li{display:flex;align-items:center;gap:8px;line-height:1.4}
 .note.wide{grid-column:1/-1;aspect-ratio:auto;padding:26px 16px}
 .hubcard{text-align:center}
 .hubcard h1{font-size:clamp(2.1rem,5vw,3.4rem);margin-bottom:.45em}
@@ -765,6 +774,82 @@ nfx("5-ESS3-1","Rain gardens are another community solution. A rain garden is a 
 nfx("5-PS2-1","Gravity is not only on Earth. Every object with mass pulls on other objects. The Moon has less mass than Earth, so its gravity is weaker. On the Moon, you would weigh only about one sixth of what you weigh on Earth, so you could jump much higher.",["Why would you weigh less on the Moon?", ["The Moon has less mass, so its gravity is weaker", "There is no gravity anywhere in space", "The Moon is closer to the Sun"], "Gravity depends on mass."],[["What mistaken idea do BOTH texts correct?", ["That people on the other side of Earth would fall off", "That things fall when dropped", "That Earth is round"], "Jaylen thought down was different on the other side."], ["Which tool appears in BOTH texts?", ["A plumb line", "A telescope", "A thermometer"], "The crew made one with a washer and string."], ["What do BOTH texts say gravity pulls toward?", ["The center of Earth", "The North Pole", "The sky"], "Down is toward the ground for everyone."]]);
 nfx("5-ESS1-1","Light from distant stars takes a long time to reach us. Scientists measure star distances in light-years, the distance light travels in one year. Light from some stars has been traveling for thousands of years. When you look at those stars, you are seeing light that left them long ago.",["What is a light-year?", ["The distance light travels in one year", "How long a star lives", "One year on a star"], "Light-years measure huge distances."],[["What mistaken idea do BOTH texts correct?", ["That the Sun is not a star", "That stars make light", "That the Sun is bright"], "April thought the Sun was a different kind of thing."], ["What test appears in BOTH texts?", ["Two identical flashlights at different distances", "Shining a flashlight into a mirror", "Measuring shadows"], "The close flashlight looked brighter."], ["Which detail is in the nonfiction text but NOT in the story?", ["Sirius is the brightest star in our night sky", "Car headlights look brighter as the car gets closer", "Some stars are brighter than the Sun but very far away"], "Headlights and far bright stars are in both texts. Sirius is only in the nonfiction text."]]);
 nfx("5-ESS1-2","Earth's tilt causes the seasons. Earth is tilted as it orbits the Sun. In summer, our part of Earth tilts toward the Sun, so days are longer and sunlight hits more directly. In winter, it tilts away, so days are shorter and the sunlight is more spread out.",["Why are summer days longer in Maryland?", ["Our part of Earth tilts toward the Sun", "Earth is closer to the Sun in summer", "The Sun gets bigger in summer"], "The tilt changes day length and how directly sunlight hits."],[["What mistaken idea do BOTH texts correct?", ["That the Sun really moves across the sky", "That shadows exist", "That stars are in the sky"], "Jaylen thought the Sun was moving."], ["What do BOTH texts say about shadows around noon?", ["They are shortest", "They are longest", "They disappear completely"], "The crew's chalk marks showed this pattern."], ["Which constellation appears in BOTH texts as a winter sight?", ["Orion", "The Big Dipper", "The Summer Triangle"], "The Summer Triangle is in the story, but as a summer sight."]]);
+/* Science careers by quarter: car(quarter, [[job, path, what they do, science they use, how to get there], ...])
+   path: college | cc (community college) | trade | appr (apprenticeship) | job (learn on the job) */
+const CAREERS={};
+function car(q,list){CAREERS[q]=list}
+car('3-1',[
+["Roller Coaster Engineer","college","Designs rides that twist, loop, and drop while keeping every rider safe. They figure out how fast a train will go and how hard each turn will push on riders.","Balanced and unbalanced forces, gravity, and patterns in motion.","Usually a 4-year college degree in mechanical engineering. Many start by working on smaller machines and rides."],
+["Elevator Technician","appr","Installs and fixes elevators and escalators in schools, hospitals, and skyscrapers. An elevator uses a heavy counterweight to balance the car, so the motor does not have to lift the whole weight.","Balanced forces, pulleys, motors, and magnets.","Usually a 4-year paid apprenticeship, learning from experienced technicians while earning a paycheck."],
+["Auto Technician","trade","Finds and fixes problems in cars and trucks. They replace worn brakes, check tires, and repair engines.","Friction in brakes and tires, forces, and electric circuits.","A trade school program that takes about 6 months to 2 years. Many high schools offer auto classes too."],
+["MRI Technologist","cc","Uses a giant magnet machine to take pictures of the inside of a patient's body. They help patients stay calm and make sure nothing made of iron or steel goes near the magnet.","Magnets and their pull on certain metals.","Usually a 2-year community college degree in imaging, plus a certification test."]
+]);
+car('3-2',[
+["Meteorologist","college","Studies the air to forecast the weather. Some appear on TV, and others warn cities and pilots about storms.","Weather data, temperature, precipitation, and seasonal patterns.","A 4-year college degree in meteorology or atmospheric science, with lots of math and computer work."],
+["Climate Scientist","college","Studies weather patterns over many years to learn how Earth's climate is changing. They collect data from ice, oceans, satellites, and even tree rings.","Climate, regions of the world, and graphing data over time.","A 4-year college degree, and often more years of school after that to do research."],
+["Power Line Worker","appr","Climbs poles and works from bucket trucks to keep electricity flowing. After a big storm knocks out power, they are the heroes who turn the lights back on.","Weather hazards and safety solutions.","Usually a paid apprenticeship of about 3 to 4 years. Some start with a short line worker training program."],
+["HVAC Technician","trade","Installs and repairs heating and air conditioning. They keep homes and schools comfortable in hot summers and cold winters.","Temperature, seasons, and how climate affects buildings.","A trade school program of about 6 months to 2 years, or an apprenticeship."]
+]);
+car('3-3',[
+["Paleontologist","college","Digs up and studies fossils to learn what lived long ago. They work in the field, in labs, and in museums.","Fossils, extinct living things, and clues about past environments.","A 4-year college degree in geology or biology, and usually several more years of school to become an expert."],
+["Veterinarian","college","Is a doctor for animals. They check pets and farm animals, give medicine, and do surgery.","Inherited traits, variation, and how environment affects animal health.","A 4-year college degree, then 4 more years of veterinary school."],
+["Veterinary Technician","cc","Works beside the veterinarian. They take X-rays, run lab tests, care for animals after surgery, and help nervous pets feel safe.","Animal traits, health, and how bodies grow.","Usually a 2-year community college degree, plus a state test."],
+["Farmer","job","Grows crops or raises animals that feed the world. Farmers choose seeds and animals with helpful traits and give them the right light, water, and food.","Inherited traits and how the environment affects living things.","Many farmers learn on the job, often on a family farm. Some take agriculture classes in high school or college."]
+]);
+car('3-4',[
+["Wildlife Biologist","college","Studies wild animals and their habitats. They might track bald eagles, count frogs, or help an endangered species recover.","Habitats, life cycles, animal groups, and survival.","A 4-year college degree in biology or wildlife science."],
+["Zookeeper","college","Feeds and cares for zoo animals and keeps their habitats clean and healthy. They watch behavior closely to notice if an animal is sick.","Animal needs, habitats, life cycles, and animal groups.","Most zookeepers have a college degree in biology or animal science, and many start as volunteers or interns."],
+["Arborist","trade","Is a tree expert. Arborists climb trees with ropes to trim them, keep trees healthy, and safely remove trees that are dying.","Plant life cycles, habitats, and how environment affects living things.","Training on the job or in a short trade program, then a certification test."],
+["Beekeeper","job","Cares for hives of honeybees and collects honey. Bees also pollinate crops like apples and blueberries, so beekeepers help farmers too.","Insect life cycles and how animals live in groups.","Most beekeepers learn on the job from an experienced beekeeper. Many local clubs offer beginner classes."]
+]);
+car('4-1',[
+["Geologist","college","Studies rocks, soil, and landforms to learn how Earth has changed. Some find water underground, and others study earthquakes and volcanoes.","Rock layers, fossils, weathering, erosion, and Earth's patterns.","A 4-year college degree in geology."],
+["Civil Engineer","college","Designs roads, bridges, dams, and buildings that can stand up to floods, erosion, and earthquakes.","Natural hazards, erosion, and testing designs to reduce harm.","A 4-year college degree in civil engineering, then a license test."],
+["Surveying Technician","cc","Measures land with special tools, GPS, and even drones to make accurate maps. Builders use these maps before they start any project.","Maps and patterns in Earth's features.","A short certificate or a 2-year community college degree. Some learn on the job."],
+["Heavy Equipment Operator","appr","Drives giant bulldozers, excavators, and cranes. They move earth to build roads and put rocks along shorelines to stop erosion.","Erosion, landforms, and reducing the impact of natural processes.","Usually a paid apprenticeship of about 3 to 4 years, or a shorter trade school program."]
+]);
+car('4-2',[
+["Electrical Engineer","college","Designs the circuits inside phones, cars, video game systems, and power plants.","Electric current and how energy moves and changes form.","A 4-year college degree in electrical engineering."],
+["Electrician","appr","Installs and repairs the wiring that brings electricity to lights, outlets, and machines in homes and schools.","Electric current, circuits, and energy transfer.","Usually a 4 to 5 year paid apprenticeship, then a license test."],
+["Solar Panel Installer","trade","Climbs onto roofs and open fields to set up solar panels. Their work turns sunlight into electricity for homes.","Devices that change light into electricity.","Often a short trade school course or on-the-job training, sometimes just a few weeks to start."],
+["Wind Turbine Technician","cc","Climbs wind turbines taller than a 20-story building to inspect and fix them. They keep the blades turning and the electricity flowing.","Energy changing from motion to electricity.","A trade school certificate or a 2-year community college program."]
+]);
+car('4-3',[
+["Oceanographer","college","Studies the ocean, including its waves, currents, and the living things in it. Some ride research ships or send robots to the deep sea.","Waves, energy, and natural resources from the ocean.","A 4-year college degree in a science, and often more school after that."],
+["Software Engineer","college","Writes the code that runs apps, games, and websites. Every program sends information as patterns of 1s and 0s.","Using patterns and codes to send information.","Usually a 4-year college degree in computer science. Some people learn through shorter coding programs."],
+["Sound Engineer","trade","Records and mixes music, podcasts, and movie sound. They control sound waves so everything sounds clear.","Sound waves, vibrations, and amplitude.","A trade school or community college program, plus lots of practice."],
+["Fiber Optic Technician","trade","Installs the glass cables that carry internet signals as flashes of light. One thin cable can carry millions of messages at once.","Sending information with light and patterns.","A short trade school program or on-the-job training, then a certification."]
+]);
+car('4-4',[
+["Optometrist","college","Is an eye doctor who tests how well people see and decides if they need glasses or contacts.","How light enters the eye and how the brain makes sense of it.","A 4-year college degree, then 4 more years of optometry school."],
+["Optician","cc","Fits people with glasses and contact lenses so they can see clearly and comfortably.","How lenses bend light to help eyes see.","A 1 to 2 year program at a community college, or an apprenticeship. Some states require a license."],
+["Photographer","job","Takes pictures for newspapers, weddings, nature magazines, and more. They control light to make each photo look its best.","Light, reflection, and how cameras capture light.","Many photographers learn on the job and through practice. Some take art or photography classes."],
+["Biomedical Engineer","college","Designs devices that help bodies work, like artificial legs, hearing aids, and heart monitors. They study how body structures work and copy them.","Internal and external structures and how senses send information to the brain.","A 4-year college degree in biomedical engineering."]
+]);
+car('5-1',[
+["Chemist","college","Studies what matter is made of and how substances react. Chemists invent medicines, paints, and materials like stronger plastics.","Properties of matter, particles, and chemical reactions.","A 4-year college degree in chemistry."],
+["Food Scientist","college","Invents new foods and makes sure foods are safe, tasty, and last longer on the shelf.","Mixtures, reactions, and how plants make food from sunlight.","A 4-year college degree in food science or chemistry."],
+["Pastry Chef","trade","Bakes cakes, breads, and desserts. Baking soda bubbling, bread rising, and sugar browning are all reactions that make something new.","Chemical reactions and properties of matter.","A culinary school program of months to 2 years, or learning on the job in a bakery."],
+["Welder","trade","Uses intense heat to melt and join metal. Welders build bridges, ships, cars, and buildings.","Properties of materials, heating and cooling, and changes in matter.","A trade school program of several months to 2 years, or an apprenticeship."]
+]);
+car('5-2',[
+["Environmental Scientist","college","Studies air, water, and soil to protect the environment and people's health. They track pollution and find ways to clean it up.","Earth's four spheres and how matter moves in ecosystems.","A 4-year college degree in environmental science or biology."],
+["Marine Biologist","college","Studies living things in the ocean and the Chesapeake Bay, from tiny plankton to whales.","Food webs, ecosystems, and how energy flows from the sun.","A 4-year college degree in biology, and often more school after that."],
+["Water Treatment Operator","trade","Runs the plants that clean water so it is safe to drink, and cleans used water before it returns to rivers.","Fresh water, the water cycle, and protecting Earth's resources.","A trade or community college program and training on the job, then a state license."],
+["Waterman","job","Is a Chesapeake Bay fisher who harvests crabs, oysters, and fish. Watermen notice changes in the Bay before almost anyone else.","Ecosystems, food chains, and how the environment affects living things.","Most learn on the job, often from family. They need licenses to fish and crab."]
+]);
+car('5-3',[
+["Astronaut","college","Travels to space to do experiments, fix spacecraft, and study Earth from above.","Gravity, Earth's movement, and space systems.","A 4-year college degree in science, math, or engineering, plus more school or experience such as flying jets."],
+["Astronomer","college","Uses giant telescopes to study stars, planets, and galaxies. They figure out how far away stars are and how bright they really are.","Stars, distance and brightness, and patterns in the sky.","A 4-year college degree, and usually many more years of school."],
+["Aircraft Mechanic","trade","Inspects and repairs airplanes and helicopters so they are safe to fly.","Forces like gravity and how machines work.","A trade school program of about 18 months to 2 years, then federal certification tests."],
+["Aerospace Technician","cc","Helps engineers build and test rockets, satellites, and airplanes. They run tests and record data.","Gravity and how objects move.","Usually a 2-year community college degree in engineering technology."]
+]);
+car('5-4',[
+["Environmental Engineer","college","Designs solutions to pollution, like trash wheels, stormwater systems, and better recycling plants.","Protecting resources and how matter moves through the environment.","A 4-year college degree in environmental or civil engineering."],
+["Environmental Educator","college","Teaches people about nature at parks, nature centers, and aquariums, and leads cleanups and field trips.","Ecosystems, pollution, and how communities protect Earth.","Usually a 4-year college degree in science or education."],
+["Recycling Center Technician","job","Runs the machines that sort recyclables using magnets, air jets, and cameras, so materials can be made into new things.","Properties of materials and keeping matter out of the trash.","Most learn on the job. Some take short safety and equipment training."],
+["Recycling Truck Driver","trade","Drives the big trucks that collect recycling and trash from homes and schools.","Communities protecting resources by recycling.","A commercial driver's license (CDL) program at a trade school, usually a few weeks long."]
+]);
 
 
 const GRADES={
@@ -3729,7 +3814,7 @@ function vGrade(gr){var G=GRADES[gr];
    pad('<div class="notes">'+[1,2,3,4].map(function(n,i){return note('/g/'+gr+'/q/'+n,'Quarter '+QWORD[n],['sage','teal','deep','pink'][i],esc(QUARTERS[gr+'-'+n].n))}).join('')+'</div>')+'</main>'+foot()}
 function vQuarter(gr,qn){var Q=QUARTERS[gr+'-'+qn],base='/g/'+gr+'/q/'+qn;
   return crumb('/g/'+gr,GRADES[gr].name)+'<main class="scene" id="main"><div class="lead"><h1 class="display" tabindex="-1">Q'+qn+': '+esc(Q.n)+'</h1><p>'+inl(Q.d)+'</p></div>'+
-   pad('<div class="notes">'+note(base+'/guides','Guides','sage')+note(base+'/vocab','Vocab','teal')+note(base+'/reading','Reading','deep')+note(base+'/home','At Home Activities','pink')+'</div>')+'</main>'+foot()}
+   pad('<div class="notes">'+note(base+'/guides','Guides','sage')+note(base+'/vocab','Vocab','teal')+note(base+'/reading','Reading','deep')+note(base+'/home','At Home Activities','pink')+note(base+'/careers','Science Careers','sage wide','Jobs that use this science')+'</div>')+'</main>'+foot()}
 function pageHead(back,label,tagTxt,tagCls,title,std){
   return crumb(back,label)+'<div class="page" id="main"><header><span class="tag '+tagCls+'">'+tagTxt+'</span><h1 class="display" tabindex="-1">'+title+'</h1>'+(std?'<p class="std">'+std+'</p>':'')+'</header>'}
 function vGuides(gr,qn){var Q=QUARTERS[gr+'-'+qn],base='/g/'+gr+'/q/'+qn;
@@ -3767,6 +3852,12 @@ function vHome(gr,qn){var Q=QUARTERS[gr+'-'+qn],base='/g/'+gr+'/q/'+qn;
   var secs=Q.s.map(function(s){var G=GUIDES[s],acts=homeActs(s);return '<section class="paper md homesec"><h2 class="display">'+esc(smart(G?G.t:s))+'</h2><p class="std">'+s+'</p><ul>'+acts.map(function(x){return '<li>'+inl(x)+'</li>'}).join('')+'</ul><p><a class="btn" href="#'+base+'/guides/'+s+'">Read the parent guide</a></p></section>'}).join('');
   return pageHead(base,'Q'+qn+': '+Q.n,'At Home Activities','pink','At-home activities for Quarter '+QWORD[qn],'Short activities that use things you already have. The time and materials are listed for each one.')+secs+'</div>'+foot()}
 function vFair(){return pageHead('/','Resource Hub','Science Fair','pink','Science fair','')+'<div class="paper empty"><p class="display">Coming soon</p><p>Science fair information will be posted here.</p></div></div>'+foot()}
+var PATHS={college:['College','4 or more years at a college or university'],cc:['Community college','About 2 years at a community college'],trade:['Trade school','A few months to 2 years of hands-on training'],appr:['Apprenticeship','Get paid to learn on the job from experts'],job:['Learn on the job','Start working and learn as you go']};
+function vCareers(gr,qn){var key=gr+'-'+qn,Q=QUARTERS[key],base='/g/'+gr+'/q/'+qn,L=CAREERS[key]||[];
+  return pageHead(base,'Q'+qn+': '+Q.n,'Careers','sage','Science Careers','Jobs that use what we are learning in Quarter '+QWORD[qn]+'.')+
+   '<section class="paper md" style="max-width:none"><p>Lots of grown-ups use science at work every day. Some jobs start with college. Others start with community college, trade school, or an apprenticeship, where you get paid while you learn. Every path can lead to an exciting science job!</p><ul class="pathkey">'+
+   ['college','cc','trade','appr','job'].map(function(k){return '<li><span class="path '+k+'">'+PATHS[k][0]+'</span>'+PATHS[k][1]+'</li>'}).join('')+'</ul></section>'+
+   '<div class="careers">'+L.map(function(j){var P=PATHS[j[1]]||PATHS.job;return '<article class="career"><h2>'+esc(smart(j[0]))+'</h2><span><span class="path '+j[1]+'">'+P[0]+'</span></span><p>'+esc(smart(j[2]))+'</p><p><span class="lbl">Science they use:</span> '+esc(smart(j[3]))+'</p><p><span class="lbl">How to get there:</span> '+esc(smart(j[4]))+'</p></article>'}).join('')+'</div></div>'+foot()}
 function vMissing(back){return crumb(back||'/','Back')+'<div class="page" id="main"><div class="paper empty"><p class="display">Page not found</p><p><a class="btn" href="#/">Go to the hub</a></p></div></div>'}
 
 /* MESA boss battle */
@@ -3844,6 +3935,7 @@ function route(){
         else if(p[4]==='vocab')html=vVocab(gr,qn);
         else if(p[4]==='reading')html=p[5]?vBook(gr,qn,p[5]):vReading(gr,qn);
         else if(p[4]==='home')html=vHome(gr,qn);
+        else if(p[4]==='careers')html=vCareers(gr,qn);
         else html=vMissing('/g/'+gr);
       } else html=vMissing('/g/'+gr);
     } else html=vMissing('/');
