@@ -214,6 +214,514 @@ function b(id,t,notes,a,aTail,bb,bTail){BOOKS[id]={t:t,notes:notes,a:a,aTail:aTa
 function v(id,md){VOCAB[id]=md}
 const QUIZ={};
 function qz(id,a){QUIZ[id]=a}
+/* Nonfiction companions: nf(book id, title, [paragraphs], [[question,[correct,wrong,wrong],why],...]) */
+const NF={};
+function nf(id,t,p,q){NF[id]={t:t,p:p,q:q}}
+nf('3-PS2-1',"Pushes, Pulls, and Balanced Forces",[
+"A force is a push or a pull. Forces are acting on everything around you, all the time. Kicking a ball is a push. Opening a drawer is a pull. Even when nothing seems to be happening, forces are still at work.",
+"Think about a book resting on a desk. Gravity pulls the book down. The desk pushes the book up with the same strength. The two forces are the same size and point in opposite directions, so they cancel out. Scientists call these balanced forces. When the forces on an object are balanced, its motion does not change. A still object stays still.",
+"When one force is stronger than the other, the forces are unbalanced. Unbalanced forces change motion. They can make an object start moving, speed up, slow down, or change direction. In a game of tug of war, the rope moves toward the team that pulls harder.",
+"Engineers use forces to keep people safe. Bike brakes make an unbalanced force that slows the wheels. Seatbelts push back on your body so you do not keep moving forward when a car stops suddenly."
+],[
+["What is a force?",["A push or a pull","A kind of energy drink","Something that only happens in space"],"The text says a force is a push or a pull."],
+["Why does a book on a desk stay still?",["Gravity pulls down and the desk pushes up with the same strength","No forces are acting on the book","The book is too heavy to move"],"The forces are balanced, so they cancel out and the book's motion does not change."],
+["What can unbalanced forces do?",["Make an object start, stop, speed up, slow down, or turn","Only make objects float","Nothing at all"],"Unbalanced forces change an object's motion."],
+["In tug of war, which way does the rope move?",["Toward the team that pulls harder","Toward the team that pulls softer","It never moves"],"The stronger pull makes the forces unbalanced, so the rope moves that way."],
+["How do bike brakes use forces?",["They make an unbalanced force that slows the wheels","They make the bike heavier","They balance gravity so the bike floats"],"Brakes create a force that slows the bike down."]
+]);
+nf('3-PS2-2',"Swinging in a Pattern",[
+"Some motion repeats over and over. A swing goes forward and back. A ball rolling in a bowl rocks from side to side. When motion repeats in a way you can count on, it is a pattern. Patterns help scientists predict what will happen next.",
+"A pendulum is a weight that hangs from a string or rod and swings back and forth. There is a famous story that the scientist Galileo watched a lamp swinging in a church about 400 years ago. He timed the swings with his own pulse and noticed that each swing took about the same amount of time.",
+"Scientists have found that the length of the string changes the pattern. A long pendulum swings slowly. A short pendulum swings quickly. Using a heavier weight or a harder push does not change how long each swing takes very much.",
+"Because pendulums swing in such a steady pattern, people used them to build clocks. A tall grandfather clock has a long pendulum inside. Each swing helps the clock tick off the seconds."
+],[
+["What is a pendulum?",["A weight that swings back and forth from a string or rod","A kind of magnet","A ball that rolls in a straight line"],"The text defines a pendulum as a hanging weight that swings back and forth."],
+["What changes how fast a pendulum swings?",["The length of the string","The color of the weight","How loudly you count"],"Long pendulums swing slowly and short pendulums swing quickly."],
+["What does a pattern help scientists do?",["Predict what will happen next","Stop all motion","Make objects heavier"],"When motion repeats in a pattern, you can predict what comes next."],
+["According to the story, how did Galileo time a swinging lamp?",["With his own pulse","With a cell phone","With a sand timer"],"The text says he timed the swings with his pulse."],
+["Why were pendulums used in clocks?",["They swing in a steady pattern","They are very light","They make loud music"],"Each steady swing helps a clock keep time."]
+]);
+nf('3-PS2-3',"Invisible Pushes and Pulls",[
+"Most pushes and pulls happen when things touch. Magnets and static electricity are different. They can push or pull on objects without touching them at all.",
+"A magnet pulls on some metals, like iron and steel. It does not pull on all metals. Aluminum foil, copper pennies, and gold rings will not stick to a magnet. Every magnet has two ends called poles, a north pole and a south pole. When two different poles face each other, they attract, or pull together. When two of the same poles face each other, they repel, or push apart. Earth itself acts like a giant magnet, which is why a compass needle points north.",
+"Static electricity is a buildup of electric charge. When you rub a balloon on your hair, charge moves from your hair to the balloon. Now the balloon can pull on small bits of paper or make your hair stand up. Static electricity is why socks cling together when they come out of the dryer.",
+"Lightning is a giant spark of static electricity. Charge builds up in storm clouds until it jumps to the ground or to another cloud."
+],[
+["What makes magnets and static electricity special?",["They can push or pull without touching","They only work underwater","They make objects disappear"],"Both can act on objects without touching them."],
+["Which of these will stick to a magnet?",["A steel paper clip","An aluminum can","A copper penny"],"Magnets pull on iron and steel, not on aluminum or copper."],
+["What happens when two north poles face each other?",["They push apart","They pull together","Nothing happens"],"Like poles repel, or push apart."],
+["Why does a compass needle point north?",["Earth acts like a giant magnet","The wind pushes it","It is painted red on one end"],"Earth's magnetism pulls on the compass needle."],
+["What is lightning?",["A giant spark of static electricity","A kind of magnet","Light reflecting off rain"],"Charge builds up in storm clouds and jumps as a giant spark."]
+]);
+nf('3-PS2-4',"Magnets Solve Problems",[
+"Engineers are problem solvers. They start by naming a problem. Next they think about what science ideas could help. Then they design a solution, test it, and make it better. Magnets have helped engineers solve many everyday problems.",
+"Look at a refrigerator door. A thin magnetic strip runs around the edge of the door. It pulls the door closed tight so cold air stays inside. Cabinet doors, pencil cases, and some backpacks use magnetic latches the same way. Magnets also hold up papers on whiteboards and help toy trains link together.",
+"Some magnet solutions are very big. In Japan and China, special trains called maglev trains float above the track using powerful magnets. Because the train does not rub on the track, it can travel faster than 250 miles per hour.",
+"Engineers rarely get a design right on the first try. They test it, see what does not work, and improve it. A weak magnet might need to be bigger, or moved closer to the metal it needs to hold."
+],[
+["What do engineers do first?",["Name the problem","Paint the design","Throw away their ideas"],"Engineers start by naming a problem."],
+["Why does a refrigerator door have a magnetic strip?",["To pull the door closed so cold air stays in","To make the food colder","To play music"],"The magnetic strip holds the door tightly shut."],
+["How does a maglev train move so fast?",["It floats above the track using magnets","It has very big wheels","It is pulled by horses"],"Because it floats, it does not rub on the track."],
+["What should an engineer do if a design does not work?",["Test it, find the problem, and improve it","Give up right away","Make it exactly the same again"],"Engineers expect to test and improve their designs."],
+["Which is NOT named in the text as something that uses magnets?",["A wooden pencil","A refrigerator door","A toy train"],"Pencils were not mentioned. Fridge doors and toy trains both use magnets."]
+]);
+nf('3-ESS2-1',"What Weather Will Each Season Bring?",[
+"Weather is what the air is doing outside right now. It includes the temperature, wind, clouds, and precipitation. Precipitation is water that falls from the sky, like rain, snow, sleet, or hail.",
+"Scientists who study weather are called meteorologists. They measure temperature with a thermometer, rain with a rain gauge, and wind speed with a tool called an anemometer. They record the data every day for many years. Then they make tables and graphs to find patterns.",
+"These patterns show the typical weather for each season. In Maryland, summer days are usually hot and humid, and winter days are usually cold, with a chance of snow. Typical does not mean every day is the same. A warm day can still happen in January. Typical means what usually happens over many days.",
+"Knowing the typical weather helps people plan. Farmers decide when to plant. Cities get snowplows ready before winter. Families pack the right clothes for a trip."
+],[
+["What is precipitation?",["Water that falls from the sky, like rain or snow","How hot or cold it is","How fast the wind blows"],"Precipitation is rain, snow, sleet, or hail."],
+["What does a rain gauge measure?",["How much rain falls","How warm the air is","How fast the wind blows"],"Meteorologists measure rain with a rain gauge."],
+["What does typical weather mean?",["What usually happens over many days","The exact weather every single day","The weather on your birthday"],"Typical means the pattern over many days. Any one day can be different."],
+["Why do meteorologists make graphs of weather data?",["To find patterns","To make the weather change","To stop storms"],"Graphs help them see patterns over many days and years."],
+["How does knowing typical weather help cities?",["They can get snowplows ready before winter","They can stop it from snowing","They can make summer shorter"],"Cities plan ahead using the typical weather for each season."]
+]);
+nf('3-ESS2-2',"Climates Around the World",[
+"Weather is what the air is like today. Climate is the usual weather in a place over many years. A single rainy day does not tell you the climate. Many years of rainy days do.",
+"Different regions of the world have different climates. A tropical climate, like the Amazon rainforest in South America, is hot and rainy almost all year. A desert climate, like the Sahara in Africa, gets very little rain. A polar climate, like Antarctica, is freezing cold most of the year. Maryland has a temperate climate, with four seasons that change from warm to cold.",
+"Climate affects how people and animals live. In hot tropical places, homes often have open windows and raised floors. In cold polar places, buildings need thick walls to keep heat in. Farmers grow different crops in different climates. Bananas grow well in tropical places, while apples need cool winters.",
+"Scientists learn about climates by putting together information from many sources, like weather records, maps, books, and photos."
+],[
+["What is climate?",["The usual weather in a place over many years","The weather today","How hot one afternoon is"],"Climate is the pattern of weather over many years."],
+["Which climate is hot and rainy almost all year?",["Tropical","Desert","Polar"],"The Amazon rainforest has a tropical climate."],
+["What kind of climate does Maryland have?",["Temperate, with four seasons","Polar","Desert"],"Maryland's climate changes through four seasons."],
+["Why might a building in a polar place have thick walls?",["To keep heat in","To let snow inside","To stay cool in summer"],"Thick walls help keep buildings warm in a very cold climate."],
+["Which crop needs cool winters?",["Apples","Bananas","Pineapples"],"The text says apples need cool winters."]
+]);
+nf('3-ESS3-1',"Staying Safe in Severe Weather",[
+"Severe weather is weather that can be dangerous. Hurricanes, tornadoes, floods, lightning, and blizzards are all weather hazards. A hazard is something that can cause harm. People cannot stop the weather, but they can design ways to reduce the damage.",
+"Engineers design many solutions. Levees and flood walls hold back rising rivers. Storm drains carry rainwater away from streets. Lightning rods, an idea from Benjamin Franklin, give lightning a safe path into the ground so it does not hurt a building. In places with strong winds, builders use straps that tie the roof tightly to the walls.",
+"Warning systems are solutions too. Weather scientists use radar and satellites to watch storms. Sirens, phone alerts, and TV warnings tell people when to take shelter. Many families also make an emergency plan and keep a kit with water, food, a flashlight, and batteries.",
+"No solution is perfect. Engineers compare designs to see which one reduces the most harm for the cost."
+],[
+["What is a hazard?",["Something that can cause harm","A kind of cloud","A tool for measuring rain"],"The text defines a hazard as something that can cause harm."],
+["What does a lightning rod do?",["Gives lightning a safe path into the ground","Makes lightning stronger","Stops storms from forming"],"Lightning rods send lightning safely into the ground."],
+["Can people stop severe weather?",["No, but they can reduce the damage","Yes, with big fans","Yes, by building tall walls"],"People cannot stop weather, but good designs reduce harm."],
+["What do levees and flood walls do?",["Hold back rising rivers","Measure wind speed","Make it rain less"],"Levees and flood walls protect land from flooding."],
+["Which item belongs in an emergency kit?",["A flashlight and batteries","A kite","Ice cream"],"The text lists water, food, a flashlight, and batteries."]
+]);
+nf('3-LS4-1',"Clues From Long Ago",[
+"A fossil is the remains or marks of a living thing from long ago, saved in rock. Some fossils are hard parts, like bones, teeth, and shells. Others are traces, like footprints, leaf prints, or even tunnels that worms dug.",
+"Many people think all fossils are dinosaurs, but most fossils are shells, plants, and small sea animals. Maryland's state fossil is a sea snail shell called Ecphora. It lived in the ocean that covered parts of Maryland millions of years ago.",
+"Scientists who study fossils are called paleontologists. Fossils are clues about the past. A fossil of a fish found far from any ocean tells scientists that the land was once under water. Fossils of palm trees found in a cold place tell them the climate used to be warm.",
+"Fossils also show that some living things are extinct. Extinct means they do not live anywhere on Earth anymore. Dinosaurs and woolly mammoths are extinct, but we know about them because of their fossils."
+],[
+["What is a fossil?",["The remains or marks of a living thing from long ago, saved in rock","A shiny rock that grows","A new kind of plant"],"Fossils are remains or traces of ancient living things."],
+["What kind of fossil is most common?",["Shells, plants, and small sea animals","Dinosaur bones","Woolly mammoths"],"Most fossils are shells, plants, and small animals."],
+["What is Maryland's state fossil?",["A sea snail shell called Ecphora","A dinosaur tooth","A palm tree leaf"],"Ecphora was a sea snail that lived millions of years ago."],
+["A fish fossil is found far from any ocean. What does that tell scientists?",["The land was once under water","Fish can walk on land","The fossil is fake"],"Fossils give clues about what an environment used to be like."],
+["What does extinct mean?",["No longer living anywhere on Earth","Very large","Living only in the ocean"],"Extinct living things, like dinosaurs, are gone from Earth."]
+]);
+nf('3-LS3-1',"Traits From Parents",[
+"A trait is a feature of a living thing, like fur color, eye color, or the shape of a leaf. Many traits are inherited, which means they are passed down from parents to their offspring, or young.",
+"Offspring get traits from both parents. That is why a puppy might have its mother's floppy ears and its father's spotted coat. Plants inherit traits too. Seeds from a tall sunflower often grow into tall sunflowers.",
+"Even in the same family, no two living things are exactly alike. Puppies in the same litter can be different colors and sizes. Brothers and sisters can have different hair. These differences are called variation.",
+"Scientists collect data to study traits. They might measure the height of plants, count spots, or record colors in a chart. Farmers use what they know about traits to choose seeds and animals, like cows that give more milk or corn that grows bigger ears."
+],[
+["What is a trait?",["A feature of a living thing, like fur color","A kind of food","A place where animals live"],"Traits are features like color, size, or shape."],
+["Where do offspring get their traits?",["From both parents","Only from the mother","From the weather"],"Offspring inherit traits from both parents."],
+["What is variation?",["Differences among living things of the same kind","A type of plant food","When all puppies look the same"],"Variation means no two individuals are exactly alike."],
+["Why might puppies in one litter look different?",["Each puppy gets a different mix of traits from its parents","They ate different food at birth","They were born in different countries"],"Brothers and sisters can inherit different traits."],
+["How do farmers use what they know about traits?",["They choose seeds and animals with helpful traits","They paint their crops","They make all plants the same height"],"Farmers pick plants and animals with traits they want."]
+]);
+nf('3-LS3-2',"The Environment Shapes Living Things",[
+"Living things inherit many traits from their parents. But the environment can change how those traits show up. The environment is everything around a living thing, like light, water, food, and soil.",
+"Plants show this clearly. Two bean seeds from the same plant can grow very differently. One grown in a sunny window may be short, strong, and dark green. One grown in a dark closet may be tall, thin, and pale as it stretches to find light.",
+"Some flowers even change color because of their environment. A hydrangea bush can grow blue flowers in one kind of soil and pink flowers in another. Flamingos are pink because of the shrimp and algae they eat. A flamingo that does not get that food slowly turns pale.",
+"People are affected by their environment too. Healthy food, sleep, and exercise help bodies grow strong. A trait like height comes from parents, but food can affect how tall a child grows."
+],[
+["What is the environment?",["Everything around a living thing, like light, water, and food","Only the weather","A kind of animal"],"The environment includes light, water, food, soil, and more."],
+["How might a bean plant grown in the dark look?",["Tall, thin, and pale","Short and dark green","Covered in flowers"],"Plants in the dark stretch toward light and lose their green color."],
+["Why are flamingos pink?",["Because of the shrimp and algae they eat","Because they are painted","Because their parents are red"],"Their food gives them their pink color."],
+["What can change the color of hydrangea flowers?",["The soil they grow in","The time of day","The size of the leaves"],"Hydrangeas can bloom blue or pink depending on the soil."],
+["Which statement is true?",["Traits can come from both parents and the environment","All traits come only from parents","The environment never changes living things"],"Inherited traits and the environment both matter."]
+]);
+nf('3-LS4-2',"Differences That Help Animals Survive",[
+"Animals of the same kind are not all exactly alike. Some are a little faster, a little bigger, or a slightly different color. These differences are called variation.",
+"Some differences give an animal an advantage. An advantage is something that helps it survive, find food, or have young. A beetle whose color matches the leaves is harder for a bird to spot. This kind of blending in is called camouflage. A rabbit that runs a little faster is more likely to escape a fox.",
+"Animals that survive have more young, and the young often inherit their helpful traits. Over many generations, the helpful trait becomes more common in the group. Animals do not choose to change. The differences are already there, and nature favors the helpful ones.",
+"Scientists saw this happen with peppered moths in England. Long ago, most of these moths were light colored. When smoke from factories made tree trunks dark, the dark moths were harder for birds to find. Over time, dark moths became much more common."
+],[
+["What is camouflage?",["Colors or patterns that help a living thing blend in","A kind of food","A loud warning call"],"Camouflage helps animals hide from predators."],
+["What is an advantage?",["Something that helps an animal survive or have young","A sickness","A type of habitat"],"An advantage helps a living thing do better."],
+["Why does a helpful trait become more common over time?",["Animals with it survive and pass it to their young","Animals decide to change themselves","It is taught in school"],"Survivors have young that inherit the helpful trait."],
+["Can an animal choose to change its traits when it needs to?",["No, the differences are already there","Yes, whenever it wants","Yes, but only in winter"],"Animals do not choose. Nature favors helpful differences that already exist."],
+["Why did dark peppered moths become more common?",["They were harder for birds to see on dark tree trunks","They were bigger","They ate more food"],"Dark moths had camouflage on the smoky, dark trees."]
+]);
+nf('3-LS4-4',"When an Environment Changes",[
+"Environments do not stay the same forever. Floods, fires, droughts, new buildings, and pollution can all change a place. When an environment changes, some living things do well, some move away, and some may die.",
+"The Chesapeake Bay is a good example. The Bay once had huge numbers of oysters. Oysters are important because they clean the water. One adult oyster can filter up to 50 gallons of water in a day. Over many years, overfishing, disease, and pollution made the oysters disappear from much of the Bay, and the water became cloudier.",
+"People in Maryland are working on solutions. They grow baby oysters and place them on oyster reefs. Farmers plant trees and grasses along streams to keep soil and fertilizer out of the water. Volunteers clean trash from rivers and streams.",
+"Every solution has strengths and trade-offs. A trade-off is something you give up to get something else. Planting trees along a stream protects the water, but the farmer has less land to grow crops. Scientists judge the merit, or how good a solution is, by looking at the evidence."
+],[
+["What can change an environment?",["Floods, fires, droughts, and new buildings","Only the seasons","Nothing ever changes an environment"],"The text lists floods, fires, droughts, buildings, and pollution."],
+["Why are oysters important to the Chesapeake Bay?",["They clean the water","They make the water warmer","They eat all the fish"],"One adult oyster can filter up to 50 gallons of water a day."],
+["Which is a solution people are using in Maryland?",["Placing baby oysters on oyster reefs","Adding more trash to streams","Cutting down trees by streams"],"People grow young oysters and put them on reefs."],
+["What is a trade-off?",["Something you give up to get something else","A perfect solution","A type of fish"],"Most solutions have strengths and trade-offs."],
+["What does merit mean?",["How good or useful a solution is","How old a solution is","How expensive a solution is"],"Scientists judge a solution's merit using evidence."]
+]);
+nf('3-LS4-3',"A Place to Call Home",[
+"A habitat is the place where a plant or animal lives. A good habitat gives a living thing what it needs to survive: food, water, shelter, and space.",
+"Every living thing has a body that fits certain habitats. A cactus has a thick stem that stores water and sharp spines instead of wide leaves, so it can survive in a dry desert. A polar bear has thick fur and a layer of fat to stay warm in the Arctic. A fish has gills to breathe underwater.",
+"In any habitat, some living things do well, some barely get by, and some could not survive at all. A polar bear would overheat in a hot desert. A cactus would rot in a soggy rainforest. A goldfish could not live in the salty ocean.",
+"Wildlife scientists study habitats to protect animals. Before they release an animal back into the wild, they check that the habitat has the right food, water, and shelter for it."
+],[
+["What is a habitat?",["The place where a plant or animal lives","A kind of food","An animal's family"],"A habitat is where a living thing lives."],
+["What does a good habitat provide?",["Food, water, shelter, and space","Only sunshine","Toys and games"],"Living things need food, water, shelter, and space."],
+["How does a cactus survive in the desert?",["Its thick stem stores water","It has gills","It has thick fur"],"The thick stem stores water for dry times."],
+["Why could a polar bear not survive in a hot desert?",["It would overheat","It would freeze","It would drown"],"Its thick fur and fat are made for the cold Arctic."],
+["What do scientists check before releasing an animal into the wild?",["That the habitat has the right food, water, and shelter","That the habitat is very noisy","That the habitat has many people"],"The habitat must meet the animal's needs."]
+]);
+nf('3-LS1-1',"Every Life Has a Cycle",[
+"Every living thing has a life cycle. It is born, grows, reproduces, and eventually dies. Reproduce means to make new living things of the same kind. The stages of the life cycle look very different for different plants and animals.",
+"A monarch butterfly goes through a big change called metamorphosis. It starts as a tiny egg on a milkweed leaf. A caterpillar, also called a larva, hatches and eats and grows. Next it forms a chrysalis, where its body changes completely. Finally an adult butterfly comes out and can lay eggs of its own.",
+"Frogs go through metamorphosis too. A frog egg hatches into a tadpole that lives in water and breathes with gills. Slowly the tadpole grows legs, loses its tail, and becomes a frog that can live on land.",
+"Plants have life cycles as well. A bean seed sprouts, grows into a plant, makes flowers, and then makes new seeds. People are born as babies, grow into children and adults, and can have children of their own."
+],[
+["What are the big steps in every life cycle?",["Born, grow, reproduce, and die","Swim, fly, and run","Eat, sleep, and play"],"Every living thing goes through these steps."],
+["What is metamorphosis?",["A big body change, like a caterpillar becoming a butterfly","A kind of food","A place where frogs live"],"Butterflies and frogs go through metamorphosis."],
+["What comes right after the caterpillar stage of a butterfly?",["The chrysalis","The egg","The tadpole"],"The caterpillar forms a chrysalis, and then the adult comes out."],
+["How does a tadpole breathe?",["With gills","With lungs only","Through its tail"],"Tadpoles live in water and breathe with gills."],
+["What does reproduce mean?",["To make new living things of the same kind","To grow taller","To change color"],"Reproducing makes the next generation."]
+]);
+nf('3-LS2-1',"Living in Groups",[
+"Some animals live alone, but many live and travel in groups. Wolves live in packs, bees live in hives, fish swim in schools, and elephants live in herds. Being in a group helps animals survive.",
+"Groups help animals stay safe. Meerkats take turns standing guard. While the others search for food, a lookout stands tall and watches for hawks and snakes. If it spots danger, it gives a loud call and everyone runs for their burrows. Fish in a large school are harder for a predator to pick out.",
+"Groups also help animals find food. Wolves hunt together so they can catch animals much bigger than one wolf could. Honeybees do a special dance to tell other bees where to find flowers.",
+"Groups help care for young. In an elephant herd, the oldest female leads the group, and the adults work together to protect the babies. People form groups too, like families, teams, and classes, to do things that one person cannot do alone."
+],[
+["Why do many animals live in groups?",["It helps them find food, stay safe, and raise young","They like loud noises","They cannot see well"],"Groups help with food, safety, and caring for young."],
+["What does a meerkat lookout do?",["Watches for danger and gives a warning call","Finds all the food","Builds the burrow"],"The lookout warns the group so everyone can hide."],
+["How do wolves benefit from hunting together?",["They can catch animals bigger than one wolf could","They run slower","They need less sleep"],"Working together helps wolves catch large prey."],
+["How do honeybees tell each other where flowers are?",["With a special dance","By drawing maps","By changing color"],"Bees dance to share where food is."],
+["Who leads an elephant herd?",["The oldest female","The youngest calf","A different animal"],"The oldest female leads the herd."]
+]);
+nf('4-ESS2-2',"Patterns on Earth's Surface",[
+"If you look at a map of the world, mountains, volcanoes, and earthquakes might seem to be scattered everywhere. But when scientists mark them all on one map, a pattern appears. Most of them line up in long chains.",
+"Earth's outer layer is broken into giant pieces called plates. The plates move very slowly, only about as fast as your fingernails grow. Where plates push together, pull apart, or slide past each other, the land is under great stress. That is where most earthquakes happen and many volcanoes form.",
+"The biggest pattern is called the Ring of Fire. It is a horseshoe-shaped chain of volcanoes and earthquake zones around the edge of the Pacific Ocean. About three out of every four of Earth's active volcanoes are found there. Deep ocean trenches, the lowest places on Earth, are also found along the Ring of Fire. The Mariana Trench is deeper than Mount Everest is tall.",
+"Mountain ranges form patterns too. The Himalayas, the tallest mountains on Earth, are still growing slowly as two plates push into each other. City planners and builders use these maps to decide where to build and how to prepare for earthquakes."
+],[
+["What pattern do scientists see when they map volcanoes and earthquakes?",["Most of them line up in long chains","They are spread out evenly everywhere","They only happen near the North Pole"],"Mapped together, volcanoes and earthquakes form chains."],
+["What are Earth's plates?",["Giant pieces of Earth's outer layer","Dishes used by scientists","Layers of clouds"],"Earth's outer layer is broken into slowly moving plates."],
+["Where is the Ring of Fire?",["Around the edge of the Pacific Ocean","In the middle of Africa","Across Antarctica"],"It is a horseshoe-shaped chain around the Pacific."],
+["How fast do Earth's plates move?",["About as fast as fingernails grow","As fast as a car","As fast as a running dog"],"Plates move very slowly."],
+["Why are the Himalayas still growing?",["Two plates are pushing into each other","It rains there a lot","People keep adding rocks"],"The pushing plates slowly lift the mountains higher."]
+]);
+nf('4-ESS1-1',"Reading the Rock Layers",[
+"Rock layers are like pages in a history book. Each layer, or band of rock, formed during a different period of time. Many layers form when sediment, like sand, mud, and tiny shells, settles at the bottom of a lake or sea. Over a very long time, the sediment is pressed and cemented into rock.",
+"Because new layers settle on top of older ones, the bottom layers usually formed first. The top layers are usually the youngest. Scientists use this pattern to figure out the order in which things happened.",
+"Fossils inside the layers are clues too. Along the Chesapeake Bay in southern Maryland, the Calvert Cliffs are full of fossil shark teeth, whale bones, and seashells. They are about 10 to 20 million years old. These fossils tell scientists that this land was once covered by a warm, shallow sea. Seashell fossils have even been found near the top of Mount Everest, so that rock was once under the ocean too.",
+"In the Grand Canyon, the Colorado River has cut through layers more than a mile deep. The oldest rocks at the bottom are almost two billion years old."
+],[
+["How do many rock layers form?",["Sediment settles and is pressed into rock over a long time","Lava pours down from the sky","Trees turn into stone overnight"],"Sand, mud, and shells settle and slowly become rock."],
+["Which rock layer is usually the oldest?",["The bottom layer","The top layer","The middle layer"],"New layers settle on top of older ones."],
+["What fossils are found at Calvert Cliffs in Maryland?",["Shark teeth, whale bones, and seashells","Dinosaur eggs","Palm tree leaves"],"Calvert Cliffs is famous for fossil shark teeth."],
+["What do seashell fossils near the top of Mount Everest tell us?",["That rock was once under the ocean","Sharks can climb mountains","People left shells there"],"Sea fossils show the land was once under water."],
+["What is sediment?",["Small bits of sand, mud, or rock that settle","A kind of fossil","The top of a mountain"],"Sediment settles to form new layers."]
+]);
+nf('4-ESS2-1',"Weathering and Erosion",[
+"Even the hardest rock does not last forever. Weathering is the slow breaking of rock into smaller pieces. Erosion is the moving of those pieces from one place to another. These two processes work together to shape the land.",
+"Water is the biggest cause of weathering. When water seeps into cracks and freezes, it expands and pushes the crack wider. After many freezes and thaws, the rock breaks apart. Plant roots can grow into cracks and split rocks too. Wind blowing sand can slowly wear rock away.",
+"Erosion carries the broken pieces, called sediment, somewhere else. Rivers carry sand and mud downstream. Ocean waves wash away beaches. Glaciers, huge rivers of ice, scrape and carry rocks as they slide. Over millions of years, the Colorado River carved the Grand Canyon this way.",
+"Erosion is a problem along the Chesapeake Bay, where waves wash away shoreline and farmland. People slow erosion by planting grass and trees, whose roots hold soil in place, and by building walls and rock barriers along the shore."
+],[
+["What is weathering?",["Breaking rock into smaller pieces","Moving sediment to a new place","Making new mountains"],"Weathering breaks rock down."],
+["What is erosion?",["Moving broken rock and soil from one place to another","Breaking rock with ice","A kind of weather"],"Erosion carries the pieces away."],
+["How does freezing water break rock?",["It expands in cracks and pushes them wider","It melts the rock","It makes the rock heavier"],"Ice takes up more space than water and widens cracks."],
+["What carved the Grand Canyon?",["The Colorado River, over millions of years","A giant earthquake in one day","People with shovels"],"The river slowly carried away rock and sediment."],
+["How do plants help slow erosion?",["Their roots hold soil in place","They make it rain more","They push soil into the water"],"Roots hold soil so it is harder to wash away."]
+]);
+nf('4-ESS3-2',"Designing for Earthquakes and Floods",[
+"Earthquakes, volcanoes, floods, and landslides are natural processes. They happen because Earth is always changing. People cannot stop them, but engineers can design solutions that reduce the harm they cause.",
+"Earthquakes shake the ground, and the shaking can make buildings crack or fall. In places with many earthquakes, like Japan and California, engineers design buildings that can sway without breaking. Some tall buildings sit on giant rubber pads called base isolators that soak up the shaking. Others have steel braces shaped like an X to keep the walls strong.",
+"For floods, communities build levees, flood walls, and storm drains, and they raise houses up on stilts. For volcanoes, scientists watch for warning signs, like small earthquakes and gas coming out of the ground, so people have time to leave.",
+"Scientists can tell where earthquakes are likely to happen, but not exactly when. That is why warning systems and emergency plans are so important. Engineers usually come up with several solutions, test them, and compare which works best for the cost."
+],[
+["Can engineers stop earthquakes?",["No, but they can reduce the harm","Yes, with big walls","Yes, by filling in cracks"],"People cannot stop natural processes, but designs reduce harm."],
+["What does a base isolator do?",["Soaks up shaking under a building","Makes a building taller","Warns people about floods"],"Giant rubber pads absorb earthquake shaking."],
+["Why do some buildings have steel braces shaped like an X?",["To keep the walls strong during shaking","To look fancy","To hold up signs"],"X braces help buildings stand up to earthquakes."],
+["Which solution helps protect homes from floods?",["Raising houses up on stilts","Painting houses blue","Building on the riverbank"],"Raised homes stay above floodwater."],
+["What can scientists NOT predict about earthquakes?",["Exactly when one will happen","Where they are likely to happen","That they shake the ground"],"Scientists know where, but not exactly when."]
+]);
+nf('4-PS3-1',"Speed and Energy",[
+"Energy is the ability to make things move, heat up, or change. A moving object has a kind of energy called motion energy. The faster something moves, the more motion energy it has.",
+"You can see this in everyday life. A softball tossed gently into your glove barely stings. The same ball thrown fast can make your hand hurt. A bowling ball rolled slowly knocks down a few pins, but a fast one sends pins flying. The faster object has more energy to pass along when it hits something.",
+"Speed makes a big difference. When a car goes twice as fast, it has about four times as much motion energy. That is why a crash at high speed causes much more damage than a crash at low speed.",
+"Engineers use this idea to keep people safe. Speed limits near schools are low so that cars have less energy if something goes wrong. Bike helmets, car bumpers, and airbags are designed to absorb energy during a crash."
+],[
+["What is energy?",["The ability to make things move, heat up, or change","A kind of food","How heavy something is"],"The text defines energy this way."],
+["Which has more motion energy?",["A ball thrown fast","The same ball tossed gently","A ball sitting still"],"Faster objects have more motion energy."],
+["About how much more energy does a car have when it goes twice as fast?",["About four times as much","Exactly the same","Half as much"],"Doubling speed gives about four times the motion energy."],
+["Why are speed limits low near schools?",["So cars have less energy if something goes wrong","So cars use more gas","So drivers can honk"],"Slower cars carry less energy into a crash."],
+["What do helmets and airbags do?",["Absorb energy during a crash","Make cars go faster","Give cars more energy"],"They soak up energy to protect people."]
+]);
+nf('4-PS3-3',"What Happens When Objects Collide",[
+"A collision happens when two objects hit each other. When a moving object hits another object, energy is transferred, or moved, from one object to the other.",
+"Watch a game of pool. When the white cue ball hits another ball, the cue ball slows down or stops, and the other ball rolls away. The moving ball passed some of its energy to the ball it hit. A toy called a Newton's cradle shows this too. When one steel ball swings in and hits the row, the ball on the far end swings out.",
+"Not all the energy goes into motion. Some of it becomes sound, which is why you hear a click or a crash. A little of it becomes heat. The energy does not disappear. It changes form or moves to something else.",
+"Engineers study collisions to make things safer. Car makers crash test cars with dummies inside. Playgrounds use soft wood chips or rubber under the swings. Football helmets have padding. All of these spread out or absorb the energy of a collision so it does less harm."
+],[
+["What is a collision?",["When two objects hit each other","When an object stands still","When water freezes"],"A collision is when objects bump into each other."],
+["In pool, what happens when the cue ball hits another ball?",["Energy moves to the other ball and it rolls","Both balls stop forever","The energy disappears"],"The cue ball passes energy to the ball it hits."],
+["Besides motion, what can the energy in a collision become?",["Sound and heat","Water","Light only"],"Some energy becomes sound and heat."],
+["Does energy disappear in a collision?",["No, it moves or changes form","Yes, all of it","Only on hot days"],"Energy is transferred or changed, not lost."],
+["Why are playgrounds covered with wood chips or rubber?",["To absorb the energy of a fall","To make the ground hotter","To make the slide faster"],"Soft surfaces absorb energy and protect kids."]
+]);
+nf('4-PS3-2',"Energy on the Move",[
+"Energy does not stay in one place. It travels from place to place. Heat, light, sound, and electricity are all ways that energy moves.",
+"Heat moves from warmer things to cooler things. If you put a metal spoon in a cup of hot cocoa, the handle gets warm. Some materials are good conductors, which means energy passes through them easily. Metals are good conductors. Wood and plastic are poor conductors, which is why pot handles are often made of them.",
+"Sound is energy that travels as vibrations, fast back-and-forth shakes. When you pluck a guitar string, it vibrates. The vibrations move through the air to your ears. Light travels too. Sunlight carries energy all the way from the Sun to Earth in about eight minutes.",
+"Electric current is energy moving through a path, like a wire. In a circuit, electricity flows from a battery through wires to a light bulb, where it becomes light and heat. Understanding how energy moves helps people stay safe around hot stoves and electrical outlets."
+],[
+["Which way does heat move?",["From warmer things to cooler things","From cooler things to warmer things","It never moves"],"Heat flows from warm to cool."],
+["What is a conductor?",["A material that lets energy pass through easily","A kind of battery","Something that makes sound"],"Metals are good conductors."],
+["Why are pot handles often made of wood or plastic?",["They are poor conductors, so they stay cooler","They are heavier","They conduct heat very well"],"Poor conductors slow the flow of heat to your hand."],
+["How does sound travel?",["As vibrations through the air","As light","Through wires only"],"Vibrations carry sound energy to your ears."],
+["About how long does sunlight take to reach Earth?",["About eight minutes","About one year","About one second"],"Light travels from the Sun to Earth in about eight minutes."]
+]);
+nf('4-PS3-4',"Devices That Change Energy",[
+"Energy comes in many forms, like motion, light, heat, sound, and electrical energy. A device is a tool or machine made for a purpose. Many devices convert, or change, energy from one form to another.",
+"You use these devices every day. A toaster changes electrical energy into heat. A light bulb changes electrical energy into light. A speaker changes electrical energy into sound. A solar panel changes light from the Sun into electricity. A wind turbine changes the motion of the wind into electricity.",
+"A wind-up toy or rubber-band car stores energy when you twist or stretch it. When you let go, the stored energy changes into motion. Your own body is a device too. It changes the energy in food into motion and heat.",
+"Devices do not make energy out of nothing. They only change it from one form to another. Engineers keep testing and improving devices so they waste less energy. For example, LED light bulbs make the same light as old bulbs but use much less electricity and give off much less heat."
+],[
+["What does convert mean?",["To change from one form to another","To make energy from nothing","To stop moving"],"Devices convert energy from one form to another."],
+["What does a solar panel do?",["Changes light into electricity","Changes heat into sound","Changes electricity into light"],"Solar panels turn sunlight into electricity."],
+["What happens when you let go of a twisted rubber band on a toy car?",["Stored energy changes into motion","The energy disappears","The car gets heavier"],"Stored energy turns into motion."],
+["Do devices make energy?",["No, they change it from one form to another","Yes, out of nothing","Only at night"],"Energy is changed, not created."],
+["Why are LED bulbs an improvement?",["They make light using much less electricity","They are much hotter","They make loud sounds"],"Engineers improved bulbs so they waste less energy."]
+]);
+nf('4-ESS3-1',"Where Our Energy Comes From",[
+"The electricity in your home does not start at the outlet. It is made at power plants using natural resources. A natural resource is something from nature that people use.",
+"Some resources are nonrenewable. Coal, oil, and natural gas are fuels that formed from plants and animals buried millions of years ago. When we burn them, they are used up, and they take millions of years to form again. Burning them also puts pollution and carbon dioxide into the air.",
+"Other resources are renewable, which means they do not run out. Sunlight powers solar panels. Wind spins turbines. Moving water spins turbines inside dams. In Maryland, the Conowingo Dam on the Susquehanna River uses the river's water to make electricity.",
+"Every energy source has trade-offs. Solar panels make no pollution while working, but they only work when the sun shines. Dams make steady power, but they change the river for fish. Communities think about cost, pollution, and how much energy they need when they choose. Everyone can help by saving energy, like turning off lights when leaving a room."
+],[
+["What is a natural resource?",["Something from nature that people use","A machine in a factory","A kind of light bulb"],"The text defines natural resources this way."],
+["Which energy source is nonrenewable?",["Coal","Sunlight","Wind"],"Coal takes millions of years to form."],
+["What does renewable mean?",["It can be replaced or does not run out","It is very old","It is always cheap"],"Sun, wind, and water are renewable."],
+["How does the Conowingo Dam make electricity?",["River water spins turbines","It burns coal","It collects sunlight"],"Moving water spins turbines inside the dam."],
+["What is one trade-off of solar panels?",["They only work when the sun shines","They make lots of pollution","They run out after one day"],"Every energy source has trade-offs."]
+]);
+nf('4-PS4-1',"Making Waves",[
+"A wave is a repeating pattern of motion that carries energy from one place to another. You can see waves when you drop a pebble in a pond or shake one end of a rope. Sound and light travel as waves too.",
+"Waves have a pattern of high points, called peaks or crests, and low points, called troughs. The amplitude is how tall a wave is from its middle to its peak. Bigger waves carry more energy. The wavelength is the distance from one peak to the next peak.",
+"Here is a surprise. Waves move energy, but they do not carry the water along with them. If a toy duck floats on a pond, a ripple passing by makes it bob up and down, but the duck mostly stays in the same spot. The energy travels through the water, not the water itself.",
+"Ocean waves can carry huge amounts of energy across thousands of miles. Scientists who study the ocean, called oceanographers, measure waves to warn people about dangerous storms and tsunamis."
+],[
+["What does a wave carry from place to place?",["Energy","Water","Sand"],"Waves carry energy, not the water itself."],
+["What is amplitude?",["How tall a wave is","The distance between two peaks","How fast the wind blows"],"Amplitude is the height of the wave."],
+["What is wavelength?",["The distance from one peak to the next","How tall a wave is","How long a wave lasts"],"Wavelength is measured from peak to peak."],
+["What happens to a toy duck when a ripple passes by?",["It bobs up and down but mostly stays in place","It rides the wave to shore","It sinks"],"The energy moves through the water, but the duck stays."],
+["Which waves carry more energy?",["Bigger waves with more amplitude","Smaller waves","All waves carry the same energy"],"Taller waves carry more energy."]
+]);
+nf('4-PS4-3',"Sending Messages With Patterns",[
+"People have always needed ways to send messages over long distances. Long ago, people used drums, smoke signals, and flags. Each signal was a pattern that the sender and receiver both agreed on. A set of patterns that stand for letters or ideas is called a code.",
+"In the 1830s and 1840s, Samuel Morse helped create Morse code. It uses short signals, called dots, and long signals, called dashes, to stand for each letter. The famous distress signal SOS is three dots, three dashes, and three dots. Morse code can be sent with clicks, beeps, or flashes of light. Ships used flashing lights to send Morse code across the dark ocean.",
+"Today, computers and phones use a code too. They send information as patterns of only two signals, often written as 1 and 0. Every photo, song, and text message is turned into a long pattern of 1s and 0s.",
+"Barcodes and QR codes are patterns of black and white lines or squares. A scanner reads the pattern to find out what an item is and how much it costs."
+],[
+["What is a code?",["A set of patterns that stand for letters or ideas","A secret password only","A kind of light bulb"],"A code is any pattern both sides agree on."],
+["What signals does Morse code use?",["Dots and dashes","Colors and shapes","Pictures"],"Morse code uses short and long signals."],
+["What is the Morse code for SOS?",["Three dots, three dashes, three dots","One long dash","Ten short dots"],"SOS is a famous distress signal."],
+["How do computers send information?",["As patterns of 1s and 0s","As drawings","As smoke signals"],"Computers use patterns of two signals."],
+["What must be true for a code to work?",["The sender and receiver agree on what each pattern means","It must be very loud","It must use light"],"Both sides have to know the code."]
+]);
+nf('4-LS1-2',"Senses, Brain, and Response",[
+"Your senses are how you take in information about the world. You have five main senses: sight, hearing, smell, taste, and touch. Each sense uses special body parts. Your eyes sense light, your ears sense sound, your nose and tongue sense chemicals, and your skin senses touch, heat, and cold.",
+"Your senses collect information, but your brain makes sense of it. Nerves carry signals from your sense organs to your brain, almost like wires. The brain figures out what the signals mean and decides what to do. Then it sends signals through nerves to your muscles so your body can respond.",
+"All of this happens incredibly fast. When you catch a falling ruler, your eyes see it drop, your brain decides to grab, and your fingers close, all in about a quarter of a second. Some responses, called reflexes, are even faster. If you touch something hot, you pull your hand away before you even think about it.",
+"Animals use their senses to survive. An owl's large eyes help it see at night, and a dog's nose can smell things that people cannot."
+],[
+["Which body part makes sense of the information from your senses?",["The brain","The eyes","The skin"],"Senses collect information, but the brain processes it."],
+["What carries signals from your senses to your brain?",["Nerves","Bones","Blood"],"Nerves work almost like wires."],
+["What is a reflex?",["A very fast response that happens without thinking","A kind of sense","A slow decision"],"Pulling away from something hot is a reflex."],
+["About how long does it take to catch a falling ruler?",["About a quarter of a second","About ten seconds","About one minute"],"Sensing, deciding, and responding happen very fast."],
+["How do an owl's large eyes help it survive?",["They help it see at night","They help it swim","They help it smell food"],"Animals use their senses to survive."]
+]);
+nf('4-PS4-2',"How We See",[
+"You can only see things when there is light. Light comes from light sources, things that make their own light, like the Sun, a lamp, or a fire. Most things around you, like a book or a tree, do not make their own light.",
+"So how do you see a book? Light from a light source hits the book and reflects, or bounces off it. Some of that bounced light travels into your eyes. Your eyes sense the light, and your brain turns it into a picture. Without light bouncing off an object and entering your eyes, you could not see the object at all. That is why a dark room looks black.",
+"The Moon is not a light source. It looks bright because sunlight reflects off it and travels to Earth.",
+"People use what they know about light in many ways. Mirrors reflect light very well, which is why cars have them. Reflective stripes on jackets and bikes bounce headlight beams back toward drivers so people can be seen at night. Eyeglasses, cameras, and microscopes bend light to help us see clearly."
+],[
+["What is a light source?",["Something that makes its own light, like the Sun","Anything that is shiny","An object you can see"],"Light sources make their own light."],
+["How do you see a book?",["Light bounces off the book and enters your eyes","Your eyes send out light to the book","The book makes its own light"],"Reflected light travels into your eyes."],
+["Why does the Moon look bright?",["Sunlight reflects off it","It makes its own light","It is on fire"],"The Moon reflects sunlight."],
+["What does reflect mean?",["To bounce off a surface","To make light","To soak up all light"],"Light reflects off objects."],
+["How do reflective stripes keep people safe at night?",["They bounce headlight beams back toward drivers","They make their own light","They make people invisible"],"Reflective stripes help drivers see people."]
+]);
+nf('4-LS1-1',"Structures That Help Living Things Survive",[
+"Plants and animals have structures, or body parts, that do important jobs. The job a structure does is called its function. Some structures are external, on the outside. Others are internal, on the inside.",
+"Birds' beaks are shaped for the food they eat. A hummingbird's long, thin beak reaches deep into flowers for nectar. A hawk's sharp, hooked beak tears meat. A finch's short, strong beak cracks seeds. Inside, a heart pumps blood through the body, and lungs take in air.",
+"Plants have structures too. Roots hold a plant in the ground and soak up water. A cactus has a thick stem that stores water and spines that protect it from animals. Some seeds, called burrs, have tiny hooks that catch on animal fur so the seeds get carried to new places.",
+"Engineers often copy nature's structures. In the 1940s, an engineer named George de Mestral noticed burrs stuck to his dog's fur. He studied their hooks under a microscope and invented Velcro."
+],[
+["What is a structure?",["A body part of a living thing","A building only","A kind of food"],"Structures are parts of plants and animals."],
+["What is a function?",["The job a structure does","The color of a structure","The size of an animal"],"Each structure has a function, or job."],
+["Which beak is best for reaching nectar deep in flowers?",["A long, thin beak","A short, strong beak","A sharp, hooked beak"],"Hummingbirds have long, thin beaks for nectar."],
+["How do burrs help a plant?",["Their hooks catch on fur so seeds travel to new places","They store water","They make food from sunlight"],"Burrs hitch a ride on animals."],
+["What invention came from studying burrs?",["Velcro","The airplane","The light bulb"],"George de Mestral invented Velcro after studying burrs."]
+]);
+nf('5-PS1-3',"Identifying Materials by Their Properties",[
+"A property is a feature of a material that you can observe or test. Color, shape, and texture are properties you can see or feel. Other properties need a test, like how hard a material is, whether it dissolves in water, whether a magnet pulls on it, and whether heat or electricity passes through it.",
+"Materials can look alike but have very different properties. Sugar, salt, baking soda, and cornstarch are all white powders. To tell them apart, scientists test several properties. Sugar and salt dissolve in water. Cornstarch does not dissolve and makes the water cloudy. Baking soda fizzes when vinegar is added. Looking alone is not enough.",
+"Some materials are conductors, which means heat or electricity passes through them easily. Copper is a great conductor of electricity, so it is used inside wires. Rubber and plastic are insulators, which means they block electricity, so they are used to cover wires and keep people safe.",
+"Engineers choose materials by their properties. Steel is strong, so it is used in bridges. Glass is transparent, so it is used in windows. Recycling plants use magnets to pull steel cans away from aluminum cans, because steel is magnetic and aluminum is not."
+],[
+["What is a property?",["A feature of a material you can observe or test","The price of a material","The name of a material"],"Properties include color, hardness, and whether a material dissolves."],
+["Why can't you identify white powders by looking alone?",["Different powders can look the same","White powders are invisible","Powders change color"],"Scientists test several properties to tell look-alike materials apart."],
+["Which white powder fizzes when vinegar is added?",["Baking soda","Sugar","Salt"],"Baking soda fizzes with vinegar."],
+["Why is copper used inside electrical wires?",["It is a great conductor of electricity","It is magnetic","It is transparent"],"Electricity passes easily through copper."],
+["How do recycling plants separate steel cans from aluminum cans?",["With magnets, because steel is magnetic","By color","By smell"],"Steel is magnetic and aluminum is not."]
+]);
+nf('5-PS1-2',"Matter Never Disappears",[
+"Matter can change form. Ice can melt into water. Water can freeze into ice. Sugar can dissolve until you cannot see it. Even when matter changes, the total amount of matter stays the same. Scientists say that matter is conserved.",
+"You can prove this with a scale. Put an ice cube in a sealed bag and weigh it. Let it melt and weigh it again. The weight is the same. Stir sugar into a cup of water and the sugar seems to vanish, but the cup of sugar water weighs exactly as much as the water and sugar did before.",
+"In the 1700s, a French scientist named Antoine Lavoisier carefully weighed materials before and after they changed. He found that, in a closed container, the total weight never changed. His careful measurements helped scientists understand that matter is not created or destroyed, only rearranged.",
+"Sometimes it looks like matter is lost. When a puddle dries up, the water has not vanished. It has turned into water vapor, an invisible gas, and moved into the air. This idea helps scientists track pollution and helps recycling programs reuse materials."
+],[
+["What does it mean that matter is conserved?",["The total amount of matter stays the same","Matter gets used up","Matter always gets heavier"],"When matter changes form, the total stays the same."],
+["An ice cube melts in a sealed bag. What happens to its weight?",["It stays the same","It gets lighter","It gets heavier"],"Melting changes the form, not the amount of matter."],
+["What happens to sugar stirred into water?",["It is still there, mixed into the water","It disappears forever","It turns into air"],"Dissolved sugar is still matter, and it still has weight."],
+["What did Antoine Lavoisier discover?",["In a closed container, total weight never changed","Ice is heavier than water","Sugar is made of salt"],"His careful weighing showed matter is not created or destroyed."],
+["Where does the water go when a puddle dries up?",["It becomes water vapor in the air","It vanishes completely","It turns into rock"],"The water changes into an invisible gas."]
+]);
+nf('5-PS1-1',"Tiny Particles Everywhere",[
+"Everything around you is made of matter. Matter is anything that takes up space and has weight. Your desk is matter, water is matter, and even the air you breathe is matter.",
+"All matter is made of particles that are much too small to see, even with a regular microscope. In a solid, like a block of ice, the particles are packed tightly and stay in place, so a solid keeps its shape. In a liquid, like water, the particles are close together but can slide past each other, so a liquid flows and takes the shape of its container. In a gas, like air, the particles are far apart and move around freely, so a gas spreads out to fill any space.",
+"Even though you cannot see air, it is matter. When you blow up a balloon, air particles push on the inside and make it bigger. A basketball full of air weighs a little more than a flat one.",
+"When salt dissolves in water, it breaks into particles too small to see, but they are still there. If you let the water evaporate, the salt is left behind. Scientists who invent new medicines and materials study how these tiny particles behave."
+],[
+["What is matter?",["Anything that takes up space and has weight","Only things you can see","Only solids"],"The text defines matter this way."],
+["How are particles arranged in a solid?",["Packed tightly and staying in place","Far apart and moving freely","Floating in the air"],"Tightly packed particles help a solid keep its shape."],
+["Why does a gas spread out to fill a space?",["Its particles are far apart and move freely","Its particles are stuck together","It has no particles"],"Gas particles move around freely."],
+["How do we know air is matter?",["It takes up space, like in a balloon, and has weight","Because we can see it","Because it is cold"],"A full basketball weighs a little more than a flat one."],
+["What happens to dissolved salt when the water evaporates?",["The salt is left behind","The salt disappears too","The salt turns into sugar"],"The salt particles were there all along."]
+]);
+nf('5-PS1-4',"Mixing or Making Something New?",[
+"When you mix substances together, two different things can happen. Sometimes they just mix. Other times they react and make a brand-new substance.",
+"In a mixture, the substances keep their own properties and can be separated again. Trail mix is a mixture of nuts, raisins, and pretzels. You can pick them apart. Salt and pepper can be separated too. Even salt dissolved in water is a mixture. Let the water evaporate, and the salt is left behind.",
+"In a chemical reaction, the substances change into something new with different properties. When baking soda and vinegar mix, they make a gas called carbon dioxide, which forms the bubbles. You cannot turn the bubbles back into baking soda and vinegar.",
+"Scientists look for clues that a new substance has formed. Common signs include bubbles of gas, a change in color, a change in temperature, a new smell, or a solid forming in a liquid. Baking a cake, rusting metal, and burning wood are all reactions. Knowing about reactions keeps people safe, because some cleaners can make dangerous gases if they are mixed."
+],[
+["What is a mixture?",["Substances put together that keep their own properties","A brand-new substance","A kind of gas only"],"In a mixture, the parts can be separated again."],
+["Which is a mixture?",["Trail mix","Burning wood","Rusting metal"],"You can pick trail mix apart."],
+["What do baking soda and vinegar make when they react?",["Carbon dioxide gas","Salt water","Sugar"],"The bubbles are carbon dioxide gas."],
+["Which is a sign that a new substance has formed?",["Bubbles of gas or a color change","Pouring water into a cup","Cutting paper in half"],"Gas, color change, temperature change, and new smells are signs of a reaction."],
+["Why should some cleaners never be mixed?",["They can react and make dangerous gases","They become too heavy","They lose their color"],"Some reactions are dangerous."]
+]);
+nf('5-LS1-1',"Plants Are Built From Air and Water",[
+"Where does a giant tree get all the material to build its trunk, branches, and leaves? Many people guess it comes from the soil. Scientists have found that most of a plant's body is actually made from air and water.",
+"About 400 years ago, a scientist named Jan van Helmont did an experiment. He planted a small willow tree in a pot of dried, weighed soil and gave it only water for five years. The tree gained more than 160 pounds. When he weighed the soil again, it had lost only about two ounces. The tree's new mass did not come from the soil.",
+"Today we know the answer. Plants take in carbon dioxide, a gas from the air, through tiny openings in their leaves. They take in water through their roots. Using energy from sunlight, plants turn carbon dioxide and water into sugar. They use the sugar for food and to build their bodies. This process is called photosynthesis, and it also releases oxygen into the air.",
+"Soil still matters. It holds the plant up and gives it small amounts of minerals it needs to stay healthy. But the main building materials come from air and water."
+],[
+["What is most of a plant's body made from?",["Air and water","Soil","Rocks"],"Plants build their bodies mostly from carbon dioxide and water."],
+["What did Jan van Helmont's willow tree experiment show?",["The tree gained a lot of weight, but the soil lost very little","The tree ate all the soil","The tree did not grow"],"The tree's new mass did not come from the soil."],
+["What gas do plants take in from the air?",["Carbon dioxide","Oxygen","Helium"],"Plants take in carbon dioxide through their leaves."],
+["What do plants use to turn carbon dioxide and water into sugar?",["Energy from sunlight","Energy from the soil","Energy from rocks"],"Photosynthesis uses sunlight."],
+["What does soil give a plant?",["Support and small amounts of minerals","Most of its weight","Sunlight"],"Soil holds the plant up and provides minerals."]
+]);
+nf('5-LS2-1',"Nature's Recyclers",[
+"An ecosystem is all the living and nonliving things in an area and how they interact. Inside an ecosystem, matter moves in a cycle, over and over again.",
+"Producers, like plants, make their own food using sunlight, air, and water. Consumers, like rabbits, hawks, and people, get matter by eating plants or other animals. When plants and animals die, their matter does not disappear.",
+"Decomposers break down dead plants and animals. Fungi, like mushrooms, and tiny bacteria are decomposers. Earthworms help too. As they break down dead leaves, logs, and animal remains, they return nutrients to the soil. Plants take in those nutrients and use them to grow, and the cycle starts again. Without decomposers, the world would be piled high with dead leaves and fallen trees.",
+"People copy this cycle with compost. Food scraps, grass clippings, and leaves are piled together. Worms, fungi, and bacteria break them down into rich, dark soil that gardeners use to grow healthy plants."
+],[
+["What is an ecosystem?",["All the living and nonliving things in an area and how they interact","Only the animals in a forest","A kind of decomposer"],"An ecosystem includes living and nonliving things."],
+["What does a decomposer do?",["Breaks down dead plants and animals","Makes food from sunlight","Hunts other animals"],"Decomposers return nutrients to the soil."],
+["Which is a decomposer?",["A mushroom","A hawk","A rabbit"],"Fungi, like mushrooms, are decomposers."],
+["What would happen without decomposers?",["Dead leaves and trees would pile up","Plants would grow faster","Animals would never get hungry"],"Decomposers keep matter cycling."],
+["What is compost?",["Scraps broken down into rich soil","A kind of fertilizer made in a factory","A type of rock"],"People use compost to copy nature's cycle."]
+]);
+nf('5-PS3-1',"Energy From the Sun to Your Plate",[
+"Your body needs energy to grow, repair itself, move, and stay warm. You get that energy from food. But where does the energy in food come from? It almost always starts with the Sun.",
+"Plants are producers. They capture energy from sunlight and store it in the food they make. When a rabbit eats grass, it gets some of that stored energy. When a fox eats the rabbit, it gets some of the energy too. A food chain shows this path: sun, grass, rabbit, fox.",
+"Each time energy moves up a food chain, most of it is used for living, like moving and staying warm, and some is lost as heat. Only a small part is passed on to the next animal. That is why there are many more plants than rabbits, and more rabbits than foxes, in an ecosystem.",
+"Even foods that seem far from the Sun started with sunlight. Milk comes from cows that ate grass. Bread comes from wheat. A cheeseburger's energy traces back to the plants the cow ate and the wheat in the bun."
+],[
+["Where does the energy in food almost always start?",["The Sun","The grocery store","The soil"],"Plants capture energy from sunlight."],
+["What does a food chain show?",["The path energy takes from one living thing to another","How to cook food","Where animals sleep"],"A food chain shows who eats what."],
+["In the food chain sun, grass, rabbit, fox, which is the producer?",["Grass","Rabbit","Fox"],"Plants are producers."],
+["Why are there more rabbits than foxes in an ecosystem?",["Only a small part of the energy passes up the food chain","Foxes are faster","Rabbits are bigger"],"Most energy is used for living or lost as heat at each step."],
+["Where did the energy in milk first come from?",["Sunlight captured by the grass a cow ate","The cow's water","The milk carton"],"Even milk traces back to sunlight."]
+]);
+nf('5-ESS2-1',"Earth's Four Spheres",[
+"Scientists divide Earth into four big systems called spheres. The geosphere is the rock, soil, and land. The hydrosphere is all of Earth's water, in oceans, rivers, ice, and clouds. The atmosphere is the layer of air around Earth. The biosphere is all living things.",
+"The spheres are always interacting, which means they affect each other. When rain (hydrosphere) falls on a hill (geosphere), it can wash soil away. When wind (atmosphere) blows over the ocean (hydrosphere), it makes waves. Plant roots (biosphere) can crack rock (geosphere). Trees (biosphere) release water vapor into the air (atmosphere).",
+"Sometimes one event affects all four spheres. A volcano (geosphere) sends ash into the air (atmosphere), which can cool the weather and change rainfall (hydrosphere), which affects plants and animals (biosphere).",
+"Understanding the spheres helps people plan. City planners plant trees to cool hot streets. Farmers plant grass along streams so soil stays out of the water. Scientists study how the spheres interact to understand floods, droughts, and climate."
+],[
+["What is the hydrosphere?",["All of Earth's water","All living things","The layer of air around Earth"],"The hydrosphere includes oceans, rivers, ice, and clouds."],
+["What is the biosphere?",["All living things on Earth","Earth's rock and soil","Earth's water"],"Plants, animals, and people are part of the biosphere."],
+["Rain washes soil off a hill. Which two spheres interact?",["Hydrosphere and geosphere","Atmosphere and biosphere","Biosphere and geosphere"],"Rain is water, and soil is part of the geosphere."],
+["What does interact mean?",["To affect each other","To stay apart","To freeze"],"The spheres are always affecting each other."],
+["How can a volcano affect all four spheres?",["Ash enters the air, changes weather and rain, and affects living things","It only changes the rocks","It only affects animals"],"One event can ripple through all four spheres."]
+]);
+nf('5-ESS2-2',"Where Is Earth's Water?",[
+"From space, Earth looks like a blue marble. Water covers about 71 percent of its surface. With so much water, you might think there is plenty to drink. But most of Earth's water is not something we can use.",
+"About 97 percent of Earth's water is salt water in the oceans. People cannot drink salt water or use it to water crops. Only about 3 percent of Earth's water is fresh water.",
+"Even most fresh water is hard to reach. About two thirds of it is frozen in glaciers and ice caps, mostly in Antarctica and Greenland. Most of the rest is groundwater, stored underground in soil and rock. Only a tiny amount is in lakes, rivers, and the air.",
+"Imagine all of Earth's water fit in a one-gallon jug. All the fresh water would be less than half a cup. The water in lakes and rivers would be only a few drops. That is why cities, farmers, and families work hard to keep fresh water clean and to avoid wasting it."
+],[
+["About how much of Earth's water is salt water?",["About 97 percent","About 50 percent","About 3 percent"],"Most of Earth's water is in the salty oceans."],
+["About how much of Earth's water is fresh water?",["About 3 percent","About 97 percent","About 71 percent"],"Only a small share of Earth's water is fresh."],
+["Where is most of Earth's fresh water?",["Frozen in glaciers and ice caps","In lakes and rivers","In clouds"],"About two thirds of fresh water is frozen."],
+["What is groundwater?",["Water stored underground in soil and rock","Water in the ocean","Rain that is falling"],"Most of the rest of fresh water is groundwater."],
+["If all Earth's water fit in a gallon jug, how much would be in lakes and rivers?",["Only a few drops","Half the jug","The whole jug"],"Lakes and rivers hold a tiny amount of Earth's water."]
+]);
+nf('5-ESS3-1',"Communities Protecting the Earth",[
+"People depend on natural resources like clean water, clean air, healthy soil, and forests. Communities can protect these resources by using science ideas and working together.",
+"One way is to conserve, which means to use less so there is more for later. Turning off lights saves energy, and fixing leaky faucets saves water. Another way is to recycle, turning used paper, plastic, glass, and metal into new things instead of throwing them away.",
+"Communities in Maryland are protecting the Chesapeake Bay. Baltimore's trash wheels, like Mr. Trash Wheel, use the power of the river current and the sun to scoop trash out of the water before it reaches the Bay. Volunteers grow young oysters to help filter the water. Families install rain barrels to catch rainwater, so less dirty runoff flows into streams.",
+"Protecting the Earth is not only a job for governments. Schools start recycling programs and plant gardens. Neighbors clean up parks and streams. Small actions by many people add up to big results."
+],[
+["What does conserve mean?",["To use less so there is more for later","To throw things away","To build new factories"],"Conserving saves resources for the future."],
+["What does recycle mean?",["To turn used materials into new things","To use something only once","To bury trash"],"Recycling turns used materials into new products."],
+["How do Baltimore's trash wheels clean the water?",["They use river current and sunlight to scoop up trash","They use big fans to blow trash away","They melt the trash"],"The trash wheels are powered by the current and the sun."],
+["How do rain barrels help streams?",["They catch rainwater so less dirty runoff flows into streams","They make it rain more","They add trash to the water"],"Less runoff means cleaner streams."],
+["Who can help protect the Earth?",["Families, schools, neighbors, and governments","Only scientists","Only governments"],"Small actions by many people add up."]
+]);
+nf('5-PS2-1',"Which Way Is Down?",[
+"Gravity is a force that pulls objects toward each other. Earth's gravity pulls everything toward the center of Earth. When you drop a ball, gravity pulls it down to the ground.",
+"Because Earth is round like a ball, down is not the same direction everywhere. For a child in Maryland, down points toward the ground under their feet. For a child in Australia, on the other side of the world, down also points toward the ground under their feet. Both are pulled toward the center of Earth, so nobody falls off.",
+"Builders use gravity every day. A plumb line is a string with a weight on the end. Gravity pulls the weight straight down toward Earth's center, so builders use the string to check that walls are straight up and down. A level uses a bubble in liquid to check that a surface is flat.",
+"Engineers also plan for gravity when they design bridges, roller coasters, and rockets. A rocket needs a huge push to overcome Earth's gravity and reach space."
+],[
+["What does Earth's gravity pull objects toward?",["The center of Earth","The North Pole","The Sun"],"Gravity pulls everything toward Earth's center."],
+["Why doesn't a child in Australia fall off Earth?",["Gravity pulls them toward Earth's center too","Australia is on top of Earth","They wear special shoes"],"Down is toward the ground everywhere on Earth."],
+["What is a plumb line?",["A string with a weight that hangs straight down","A kind of water pipe","A ruler that bends"],"Gravity pulls the weight straight down."],
+["Why do builders use plumb lines?",["To check that walls are straight up and down","To measure temperature","To mix cement"],"The string shows a perfectly vertical line."],
+["Why does a rocket need a huge push?",["To overcome Earth's gravity","Because space is heavy","To stay on the ground"],"Gravity pulls the rocket back toward Earth."]
+]);
+nf('5-ESS1-1',"Why the Sun Looks So Bright",[
+"The Sun is a star. Like other stars, it is a huge ball of hot gas that makes its own light. So why does the Sun look so much brighter than the stars we see at night?",
+"The answer is distance. The Sun is about 93 million miles from Earth. That sounds far, but the next closest star is about 25 trillion miles away. That is more than 250,000 times farther. Light that travels far spreads out, so a star looks dimmer the farther away it is.",
+"You can test this idea with two flashlights that are the same. Hold one close to your eyes and have a friend hold the other across the room. The close flashlight looks much brighter, even though both give off the same amount of light. It works the same way with car headlights. They look brighter as the car gets closer.",
+"Some stars are actually much bigger and brighter than the Sun, but they are so far away that they look like tiny points of light. The brightest star in our night sky is Sirius. It gives off about 25 times more light than the Sun, but it is so far away that it looks like a small twinkle."
+],[
+["What is the Sun?",["A star","A planet","A moon"],"The Sun is a star, a huge ball of hot gas."],
+["Why does the Sun look brighter than other stars?",["It is much closer to Earth","It is the biggest star","It is the only star that makes light"],"Distance makes the Sun look so bright."],
+["About how far is the Sun from Earth?",["About 93 million miles","About 93 miles","About 25 trillion miles"],"The next closest star is about 25 trillion miles away."],
+["Two flashlights are the same. Why does the close one look brighter?",["Light spreads out over distance","It uses a bigger battery","It is a different color"],"The farther light travels, the dimmer it looks."],
+["Sirius gives off more light than the Sun. Why does it look so small?",["It is very far away","It is very cold","It is behind the Moon"],"Even very bright stars look dim from far away."]
+]);
+nf('5-ESS1-2',"Patterns in the Sky",[
+"Every day, the Sun seems to rise in the east, move across the sky, and set in the west. But the Sun is not really moving across our sky. Earth is spinning. Earth rotates, or spins, once about every 24 hours. When your side of Earth faces the Sun, it is day. When it faces away, it is night.",
+"Shadows change during the day because of this spin. In the morning and evening, the Sun is low in the sky, and shadows are long. Around noon, the Sun is highest, and shadows are shortest. Shadows also point in different directions as the day goes on. Long ago, people used shadows to tell time with sundials, the first clocks.",
+"Earth also orbits, or travels around, the Sun. One trip takes about 365 days, or one year. As Earth moves along its path, the night side of Earth faces different parts of space. That is why we see different stars in different seasons. In Maryland, the constellation Orion is easy to see on winter evenings, but it is hidden in summer.",
+"Farmers, sailors, and builders have used these patterns for thousands of years to keep track of time and seasons."
+],[
+["Why does the Sun seem to move across the sky?",["Earth is spinning","The Sun circles Earth every day","Clouds push the Sun"],"Earth's rotation makes the Sun appear to move."],
+["When are shadows shortest?",["Around noon","Early morning","Late evening"],"The Sun is highest around noon."],
+["What does rotate mean?",["To spin around","To travel around something","To get bigger"],"Earth rotates once about every 24 hours."],
+["How long does it take Earth to orbit the Sun?",["About 365 days","About 24 hours","About 30 days"],"One trip around the Sun is one year."],
+["Why can we see Orion on winter evenings but not in summer?",["Earth's night side faces different parts of space as it orbits","Orion moves away in summer","Stars turn off in summer"],"Earth's orbit changes which stars we see at night."]
+]);
+
 
 const GRADES={
  3:{name:'Third Grade',text:'Students start the year with forces and interactions: balanced and unbalanced forces, gravity, friction, static electricity, and magnets, ending with a magnet design challenge. In the second quarter they study weather and climate. They graph weather data, compare climates around the world, and design a windproof house to reduce storm damage. The third quarter looks at living things over time, including fossils as evidence of ancient life, inherited traits, variation, and adaptations, and how changing environments affect organisms. The year ends with ecosystems, where students take a biodiversity inventory, study life cycles and animal groups, and plan an action project to solve a local environmental problem. Throughout, they practice building arguments with claim, evidence, and reasoning.'},
@@ -3171,7 +3679,7 @@ function speakList(arr){if(!('speechSynthesis' in window))return;try{window.spee
 function vHub(){
   return '<main class="scene hub" id="main">'+
    '<div class="hubcard">'+pad('<h1 class="display">Science Resource Hub</h1><p>A collection of helpful resources to reinforce the learning that\u2019s happening in Mrs. Swinea\u2019s Science Lab</p><img src="'+EARTH+'" alt="A globe, a sprouting plant, and a science flask">')+'</div>'+
-   '<div class="notes">'+note('/g/3','Third Grade','sage')+note('/g/4','Fourth Grade','teal')+note('/g/5','Fifth Grade','deep')+note('/science-fair','Science Fair','pink')+note('/mesa','MESA Challenges','teal')+'<a class="note sage" href="vocab-games.html">'+star('pin')+'<span>Science Games<small>Words and stories</small></span></a>'+'</div></main>'+foot()}
+   '<div class="notes">'+note('/g/3','Third Grade','sage')+note('/g/4','Fourth Grade','teal')+note('/g/5','Fifth Grade','deep')+note('/science-fair','Science Fair','pink')+note('/mesa','MESA Challenges','teal')+'</div></main>'+foot()}
 function vGrade(gr){var G=GRADES[gr];
   return crumb('/','Resource Hub')+'<main class="scene" id="main"><div class="lead"><h1 class="display" tabindex="-1">'+esc(G.name)+'</h1><p>'+inl(G.text)+'</p></div>'+
    pad('<div class="notes">'+[1,2,3,4].map(function(n,i){return note('/g/'+gr+'/q/'+n,'Quarter '+QWORD[n],['sage','teal','deep','pink'][i],esc(QUARTERS[gr+'-'+n].n))}).join('')+'</div>')+'</main>'+foot()}
@@ -3204,7 +3712,11 @@ function vBook(gr,qn,id){var Q=QUARTERS[gr+'-'+qn],base='/g/'+gr+'/q/'+qn,B=BOOK
   var nav='<div class="pagernav">'+(i>0?'<a class="btn" href="#'+base+'/reading/'+Q.s[i-1]+'">\u2190 Previous book</a>':'<span></span>')+(i<Q.s.length-1?'<a class="btn" href="#'+base+'/reading/'+Q.s[i+1]+'">Next book \u2192</a>':'<span></span>')+'</div>';
   return pageHead(base+'/reading','All books','Reading','deep',esc(smart(B.t)),id)+
    '<div class="listenrow"><button class="btn" type="button" id="listenall">\ud83d\udd0a Listen to this story</button><button class="btn" type="button" id="stopall">Stop</button></div>'+
-   '<article class="paper essay" id="essay" style="max-width:none">'+paras.map(function(t){return '<p>'+inl(t)+'</p>'}).join('')+'</article><div class="paper md tail" style="max-width:none;margin-top:30px">'+md(tail)+'</div>'+quizHTML(id)+'<p style="margin:24px 0 0;text-align:center"><a class="btn" href="vocab-games.html#story-'+gr+'-'+qn+'-'+id+'">Play a game with this story</a></p>'+nav+'</div>'+foot()}
+   '<article class="paper essay" id="essay" style="max-width:none">'+paras.map(function(t){return '<p>'+inl(t)+'</p>'}).join('')+'</article><div class="paper md tail" style="max-width:none;margin-top:30px">'+md(tail)+'</div>'+nfHTML(id)+quizHTML(id)+'<p style="margin:24px 0 0;text-align:center"><a class="btn" href="vocab-games.html#story-'+gr+'-'+qn+'-'+id+'">Play a game with this story</a></p>'+nav+'</div>'+foot()}
+function nfHTML(id){var N=NF[id];if(!N)return '';var all=N.p.join(' ');
+  return '<section class="paper essay nfsec" style="max-width:none;margin-top:36px" aria-labelledby="nftitle"><span class="tag teal">Nonfiction</span><h2 class="display" id="nftitle">'+esc(smart(N.t))+'</h2><p class="std" style="font-family:\'Patrick Hand\',cursive;font-size:1.25rem">The real science behind the story.</p>'+
+   '<div class="listenrow"><button class="btn" type="button" data-say="'+esc(all)+'">\ud83d\udd0a Listen to this text</button><button class="btn" type="button" data-say="">Stop</button></div>'+
+   N.p.map(function(t){return '<p>'+esc(smart(t))+'</p>'}).join('')+'</section>'}
 function quizHTML(id){if(!QUIZ[id])return '';return '<section class="paper quiz" id="quiz" aria-labelledby="qztitle" style="max-width:none;margin-top:36px"><h2 class="display" id="qztitle">Check your understanding</h2><p class="std">Pick the best answer. This is just for you, so nothing is saved.</p><div id="qzbody"></div><p id="qzscore" class="qzscore" aria-live="polite"></p><button class="btn" id="qzreset" type="button" hidden>Try again</button></section>'}
 function homeActs(id){var G=GUIDES[id];if(!G)return [];var m=G.md.split('**Try it at home**')[1];if(!m)return [];m=m.split('\n**')[0];return m.split('\n').filter(function(l){return /^- /.test(l)}).map(function(l){return l.slice(2)})}
 function vHome(gr,qn){var Q=QUARTERS[gr+'-'+qn],base='/g/'+gr+'/q/'+qn;
@@ -3310,7 +3822,7 @@ function bind(p){
     document.getElementById('stopall').addEventListener('click',function(){try{window.speechSynthesis.cancel()}catch(e){}});
     bindQuiz(p[5]);}
 }
-function bindQuiz(id){var Z=QUIZ[id],body=document.getElementById('qzbody');if(!Z||!body)return;
+function bindQuiz(id){var Z=QUIZ[id]?QUIZ[id].concat(NF[id]?NF[id].q:[]):null,body=document.getElementById('qzbody');if(!Z||!body)return;
   var sc=document.getElementById('qzscore'),rs=document.getElementById('qzreset');
   function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
   function build(){var tot=Z.length,done=0,good=0;sc.textContent='';rs.hidden=true;body.innerHTML='';
