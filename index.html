@@ -3171,7 +3171,7 @@ function speakList(arr){if(!('speechSynthesis' in window))return;try{window.spee
 function vHub(){
   return '<main class="scene hub" id="main">'+
    '<div class="hubcard">'+pad('<h1 class="display">Science Resource Hub</h1><p>A collection of helpful resources to reinforce the learning that\u2019s happening in Mrs. Swinea\u2019s Science Lab</p><img src="'+EARTH+'" alt="A globe, a sprouting plant, and a science flask">')+'</div>'+
-   '<div class="notes">'+note('/g/3','Third Grade','sage')+note('/g/4','Fourth Grade','teal')+note('/g/5','Fifth Grade','deep')+note('/science-fair','Science Fair','pink')+note('/mesa','MESA Challenges','sage wide','Boss Battle review games')+'</div></main>'+foot()}
+   '<div class="notes">'+note('/g/3','Third Grade','sage')+note('/g/4','Fourth Grade','teal')+note('/g/5','Fifth Grade','deep')+note('/science-fair','Science Fair','pink')+note('/mesa','MESA Challenges','teal')+'<a class="note sage" href="vocab-games.html">'+star('pin')+'<span>Vocab Games</span></a>'+'</div></main>'+foot()}
 function vGrade(gr){var G=GRADES[gr];
   return crumb('/','Resource Hub')+'<main class="scene" id="main"><div class="lead"><h1 class="display" tabindex="-1">'+esc(G.name)+'</h1><p>'+inl(G.text)+'</p></div>'+
    pad('<div class="notes">'+[1,2,3,4].map(function(n,i){return note('/g/'+gr+'/q/'+n,'Quarter '+QWORD[n],['sage','teal','deep','pink'][i],esc(QUARTERS[gr+'-'+n].n))}).join('')+'</div>')+'</main>'+foot()}
@@ -3194,7 +3194,7 @@ function vocabRows(key){var Q=QUARTERS[key];var src=Q.reuse?VOCAB[Q.reuse.from]:
 function vVocab(gr,qn){var key=gr+'-'+qn,Q=QUARTERS[key],base='/g/'+gr+'/q/'+qn,rows=vocabRows(key);
     var body=rows.map(function(r){var w=r[0].replace(/\*/g,'');return '<tr data-w="'+esc(w.toLowerCase())+'"><td class="w" data-l="Word">'+esc(w)+'<button class="sp" type="button" data-say="'+esc(w)+'" aria-label="Hear '+esc(w)+'">\ud83d\udd0a</button></td><td data-l="Say it">'+inl(r[1])+'</td><td data-l="Meaning">'+inl(r[2])+'</td><td data-l="Example">'+inl(r[4])+'</td></tr>'}).join('');
   return pageHead(base,'Q'+qn+': '+Q.n,'Vocab','teal','Vocabulary for Quarter '+QWORD[qn],rows.length+' words. Tap the speaker to hear each word.')+
-   '<div class="vtools"><input id="vq" type="search" placeholder="Search words" aria-label="Search words"></div><div class="paper flat"><div class="tscroll" style="margin:0"><table class="t vt"><thead><tr><th>Word</th><th>Say it</th><th>Kid-friendly meaning</th><th>Example sentence</th></tr></thead><tbody>'+body+'</tbody></table></div></div></div>'+foot()}
+   '<p style="margin:0 0 18px"><a class="btn" href="vocab-games.html#'+gr+'-'+qn+'">Play a vocab game with these words</a></p>'+'<div class="vtools"><input id="vq" type="search" placeholder="Search words" aria-label="Search words"></div><div class="paper flat"><div class="tscroll" style="margin:0"><table class="t vt"><thead><tr><th>Word</th><th>Say it</th><th>Kid-friendly meaning</th><th>Example sentence</th></tr></thead><tbody>'+body+'</tbody></table></div></div></div>'+foot()}
 function vReading(gr,qn){var Q=QUARTERS[gr+'-'+qn],base='/g/'+gr+'/q/'+qn;
   return pageHead(base,'Q'+qn+': '+Q.n,'Reading','deep','Mini books for Quarter '+QWORD[qn],'Short stories that put the science to work. Written to be read aloud.')+
    '<div class="cards">'+Q.s.map(function(s){var B=BOOKS[s];return '<a class="card deep" href="#'+base+'/reading/'+s+'"><span class="code">'+s+'</span><span class="ttl">'+esc(smart(B?B.t:s))+'</span></a>'}).join('')+'</div></div>'+foot()}
