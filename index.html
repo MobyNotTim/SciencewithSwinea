@@ -62,6 +62,11 @@ a{color:inherit}
 .career .lbl{font-family:'Patrick Hand',cursive;font-size:1.15rem;color:var(--deep)}
 .pathkey{display:flex;flex-wrap:wrap;gap:10px 18px;margin:12px 0 0;padding:0;list-style:none}
 .pathkey li{display:flex;align-items:center;gap:8px;line-height:1.4}
+.arcsec{margin-top:34px}
+.arcsec .cards.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:560px){.arcsec .cards.two{grid-template-columns:1fr}}
+.arcsec h2{font-size:clamp(1.8rem,3.4vw,2.5rem);margin:0}
+.arcsec .std{margin:.2em 0 18px}
 .note.wide{grid-column:1/-1;aspect-ratio:auto;padding:26px 16px}
 .hubcard{text-align:center}
 .hubcard h1{font-size:clamp(2.1rem,5vw,3.4rem);margin-bottom:.45em}
@@ -3808,7 +3813,7 @@ function speakList(arr){if(!('speechSynthesis' in window))return;try{window.spee
 function vHub(){
   return '<main class="scene hub" id="main">'+
    '<div class="hubcard">'+pad('<h1 class="display">Science Resource Hub</h1><p>A collection of helpful resources to reinforce the learning that\u2019s happening in Mrs. Swinea\u2019s Science Lab</p><img src="'+EARTH+'" alt="A globe, a sprouting plant, and a science flask">')+'</div>'+
-   '<div class="notes">'+note('/g/3','Third Grade','sage')+note('/g/4','Fourth Grade','teal')+note('/g/5','Fifth Grade','deep')+note('/science-fair','Science Fair','pink')+note('/mesa','MESA Challenges','teal')+'</div></main>'+foot()}
+   '<div class="notes">'+note('/g/3','Third Grade','sage')+note('/g/4','Fourth Grade','teal')+note('/g/5','Fifth Grade','deep')+note('/science-fair','Science Fair','pink')+note('/arcade','Science Arcade','teal wide','Games for vocabulary, stories, and MESA')+'</div></main>'+foot()}
 function vGrade(gr){var G=GRADES[gr];
   return crumb('/','Resource Hub')+'<main class="scene" id="main"><div class="lead"><h1 class="display" tabindex="-1">'+esc(G.name)+'</h1><p>'+inl(G.text)+'</p></div>'+
    pad('<div class="notes">'+[1,2,3,4].map(function(n,i){return note('/g/'+gr+'/q/'+n,'Quarter '+QWORD[n],['sage','teal','deep','pink'][i],esc(QUARTERS[gr+'-'+n].n))}).join('')+'</div>')+'</main>'+foot()}
@@ -3862,11 +3867,15 @@ function vMissing(back){return crumb(back||'/','Back')+'<div class="page" id="ma
 
 /* MESA boss battle */
 var MESA=[['lander','Planetary Lander','Boss: Crater Crusher','sage'],['wearable','Wearable Technology','Boss: The Overheater','teal'],['storybook','Storybook Theme Park','Boss: The Page Gobbler','deep'],['cleanup','Community Clean-up','Boss: Trash Tornado','pink']];
-function vMesa(){
-  return crumb('/','Resource Hub')+'<main class="scene" id="main"><div class="lead"><span class="tag sage">MD MESA</span><h1 class="display" tabindex="-1">MESA Challenges</h1>'+
-   '<p>Get ready for MESA with a team boss battle! Pick your team’s challenge. Teams take turns answering questions about the challenge rules. Right answers hit the boss, and wrong answers heal it. Work together to win!</p>'+
-   '<p style="margin-top:14px"><a class="btn" href="mesa-boss-battle.html">Open the game</a></p></div>'+
-   pad('<div class="notes">'+MESA.map(function(m){return '<a class="note '+m[3]+'" href="mesa-boss-battle.html#'+m[0]+'">'+star('pin')+'<span>'+m[1]+'<small>'+m[2]+'</small></span></a>'}).join('')+'</div>')+'</main>'+foot()}
+function vArcade(){
+  var sec=function(title,blurb,cards,cls){return '<section class="arcsec"><h2 class="display">'+title+'</h2><p class="std">'+blurb+'</p><div class="cards'+(cls?' '+cls:'')+'">'+cards+'</div></section>'};
+  var card=function(href,cls,code,ttl){return '<a class="card '+cls+'" href="'+href+'"><span class="code">'+code+'</span><span class="ttl">'+ttl+'</span></a>'};
+  var gr=[[3,'Third Grade','sage'],[4,'Fourth Grade','teal'],[5,'Fifth Grade','deep']];
+  return crumb('/','Resource Hub')+'<div class="page" id="main"><header><span class="tag teal">Games</span><h1 class="display" tabindex="-1">Science Arcade</h1><p class="std">Review games for the smart panel or home. Play solo or with 2 to 4 teams.</p></header>'+
+   sec('Vocabulary games','Pick a quarter or the whole year, then choose Boss Battle, Obby Race, or Tycoon Builder.',gr.map(function(g){return card('vocab-games.html#'+g[0],g[2],'Vocabulary',g[1])}).join(''))+
+   sec('Story games','Questions from the mini books, their nonfiction companions, and compare and contrast.',gr.map(function(g){return card('vocab-games.html#story-'+g[0],g[2],'Stories',g[1])}).join(''))+
+   sec('MESA Boss Battle','Get ready for MESA! Pick your team’s challenge. Right answers hit the boss, and wrong answers heal it.',MESA.map(function(m){return card('mesa-boss-battle.html#'+m[0],m[3],esc(m[2]),m[1])}).join(''),'two')+
+   '</div>'+foot()}
 
 /* science fair */
 function fairNotes(){return note('/science-fair/steps','Steps of Science','sage')+note('/science-fair/questions','Testable Questions','teal')+note('/science-fair/variables','Variables','deep')+note('/science-fair/ideas','Project Ideas','pink')+note('/science-fair/board','Display Board','sage')+note('/science-fair/signup','Interest Form','teal')}
@@ -3926,7 +3935,7 @@ function route(){
   try{
     if(!p.length){html=vHub();pg='hub'}
     else if(p[0]==='science-fair'){html=p[1]?vFairSub(p[1]):vFair()}
-    else if(p[0]==='mesa'&&p.length===1){html=vMesa()}
+    else if((p[0]==='arcade'||p[0]==='mesa')&&p.length===1){html=vArcade()}
     else if(p[0]==='g'&&/^[345]$/.test(p[1]||'')){gr=p[1];
       if(p.length===2)html=vGrade(gr);
       else if(p[2]==='q'&&/^[1-4]$/.test(p[3]||'')){var qn=+p[3];
