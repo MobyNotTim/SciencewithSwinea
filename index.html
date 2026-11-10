@@ -3874,6 +3874,7 @@ function vArcade(){
   return crumb('/','Resource Hub')+'<div class="page" id="main"><header><span class="tag teal">Games</span><h1 class="display" tabindex="-1">Science Arcade</h1><p class="std">Review games for the smart panel or home. Play solo or with 2 to 4 teams.</p></header>'+
    sec('Vocabulary games','Pick a quarter or the whole year, then choose Boss Battle, Obby Race, or Tycoon Builder.',gr.map(function(g){return card('vocab-games.html#'+g[0],g[2],'Vocabulary',g[1])}).join(''))+
    sec('Story games','Questions from the mini books, their nonfiction companions, and compare and contrast.',gr.map(function(g){return card('vocab-games.html#story-'+g[0],g[2],'Stories',g[1])}).join(''))+
+   sec('Reading group','Novel review games. Pick the chapters your group has read.',card('reading-games.html#frindle','pink','Andrew Clements','Frindle'),'two')+
    sec('MESA Boss Battle','Get ready for MESA! Pick your team’s challenge. Right answers hit the boss, and wrong answers heal it.',MESA.map(function(m){return card('mesa-boss-battle.html#'+m[0],m[3],esc(m[2]),m[1])}).join(''),'two')+
    '</div>'+foot()}
 
